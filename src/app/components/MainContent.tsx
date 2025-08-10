@@ -1,17 +1,23 @@
-import Card from "@/components/Card";
-export default function MainContent() {
+"use client";
+import CardStatic from "@/components/CardStatic";
+import CardExpandable from "@/components/CardExpandable";
+import React from "react";
+import { tObject } from "@/translation";
+import useTranslation from "@/hooks/useTranslation";
+interface MainContentProps {
+  children?: React.ReactNode;
+}
+export default function MainContent({ children }: MainContentProps) {
+  const t = useTranslation(tObject);
   return (
     <main className="flex justify-center mx-10">
       <div className="max-w-lg xl:max-w-xl flex flex-col justify-center">
-        <span
-          id="element"
-          className="text-site dark:text-white text-2xl lg:text-3xl mt-5 text-center tracking-wider h-8"
-        ></span>
+        {children}
         <h3
           id="dev-title"
           className="text-site-500 dark:text-neutral-500 text-sm lg:text-lg text-center mt-1"
         >
-          Desenvolvedor Full-stack
+          {t.devTitle}
         </h3>
         <ul className="flex gap-4 justify-center mt-2 xl:gap-6">
           <li className="hover-underline after:-bottom-1 dark:after:bg-neutral-300">
@@ -77,89 +83,66 @@ export default function MainContent() {
           id="paragraph"
           className="text-site-700 dark:text-neutral-300 text-xs lg:text-sm xl:text-[16px] mt-5 text-pretty"
         >
-          Olá, me chamo Nivaldo Dantas — desenvolvedor full-stack atualmente
-          formado em engenhenharia de software — com sólida base acadêmica e
-          experiência prática no desenvolvimento de aplicações mobile e web.
+          {t.paragraph}
         </p>
         <section className="mt-5">
           <h2
             id="title-one"
             className="text-site dark:text-white text-xl xl:text-2xl"
           >
-            Educação
+            {t.educationTitle}
           </h2>
-          <Card
-            title="Bacharelado em Engenharia de Software"
-            subtitle="Instituto Federal do Amazonas - IFAM"
+          <CardStatic
+            title={t.degreeTitle}
+            subtitle={t.degreeSubtitle}
             year="2020-2025"
-          ></Card>
-          <Card
-            title="Formação Continuada"
-            subtitle="Projeto Aranouá - Instituto Federal do Amazonas"
+          ></CardStatic>
+          <CardExpandable
+            title={t.continuedTitle}
+            subtitle={t.continuedSubtitle}
             year="2021-2024"
           >
             <p
               id="ex-paragraph-one"
               className="text-site-800 dark:text-neutral-300 text-sm xl:text-[16px] text-pretty"
             >
-              Atividade extracurricular em parceria do IFAM com a Samsung com
-              finalidade de capacitar, aperfeiçoar e atualizar o estudante,
-              garantindo a constante modernização das competências e atualizar
-              saberes com foco no desempenho, aprimoramento focado em cursos de
-              React, React Native, Programação para Dispositivos Móveis, Banco
-              de Dados, entre outros, com projetos reais.
+              {t.continuedDesc}
             </p>
-          </Card>
+          </CardExpandable>
 
           <h2
             id="title-two"
             className="text-site dark:text-white text-xl xl:text-2xl mt-6"
           >
-            Experiência
+            {t.experienceTitle}
           </h2>
-          <Card
-            title="Estagiário"
-            subtitle="Tribunal de Contas do Amazonas - TCE/AM"
+          <CardExpandable
+            title={t.internTitle}
+            subtitle={t.internSubtitle}
             year="2024-2025"
           >
             <ul
               id="ex-paragraph-two"
               className="text-site-800 dark:text-neutral-300 text-sm xl:text-[16px] text-pretty ml-2 list-disc grid gap-4"
             >
-              <li>
-                Desenvolvimento e manutenção de aplicações web para setores
-                internos.
-              </li>
-              <li>
-                Participação na concepção de novos projetos colaborando com
-                equipes multidisciplinares para levantamento de requisitos e
-                definição de funcionalidades.
-              </li>
-              <li>
-                Implementação de automações para otimizar fluxos de trabalho e
-                reduzir tarefas manuais, utilizando scripts e integrações entre
-                sistemas internos.
-              </li>
-              <li>
-                Utilização de ferramentas de kanban para organização,
-                acompanhamento e priorização das tarefas, promovendo eficiência
-                nos fluxos de trabalho.
-              </li>
-              <li>
-                Participação em reuniões de planejamento e retrospectiva,
-                contribuindo para o alinhamento das demandas e melhoria contínua
-                dos processos.
-              </li>
+              <li>{t.internDesc1}</li>
+              <li>{t.internDesc2}</li>
+              <li>{t.internDesc3}</li>
+              <li>{t.internDesc4}</li>
+              <li>{t.internDesc5}</li>
             </ul>
-          </Card>
+          </CardExpandable>
           <h2
             id="title-three"
             className="text-site dark:text-white text-xl xl:text-2xl mt-6"
           >
-            Idiomas
+            {t.languagesTitle}
           </h2>
-          <Card title="Português" subtitle="Nativo"></Card>
-          <Card title="Inglês" subtitle="Avançado"></Card>
+          <CardStatic
+            title={t.portuguese}
+            subtitle={t.portugueseLevel}
+          ></CardStatic>
+          <CardStatic title={t.english} subtitle={t.englishLevel}></CardStatic>
         </section>
       </div>
     </main>

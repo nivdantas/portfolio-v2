@@ -4,9 +4,8 @@ import type { GitAPI } from "./data";
 import Header from "@/components/Header";
 import MainContent from "@/components/MainContent";
 import Footer from "@/components/Footer";
+import Typed from "@/components/Typed";
 export default async function Home() {
-  "use server";
-
   let repo: GitAPI[] | null = null;
   try {
     repo = await sortRepo();
@@ -19,7 +18,9 @@ export default async function Home() {
   return (
     <>
       <Header />
-      <MainContent />
+      <MainContent>
+        <Typed strings={["Nivaldo Dantas"]} loop={false}></Typed>
+      </MainContent>
       <Footer />
     </>
   );

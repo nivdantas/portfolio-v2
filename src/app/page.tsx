@@ -1,6 +1,9 @@
 import Image from "next/image";
 import { sortRepo } from "./data";
 import type { GitAPI } from "./data";
+import Header from "@/components/Header";
+import MainContent from "@/components/MainContent";
+import Footer from "@/components/Footer";
 export default async function Home() {
   "use server";
 
@@ -11,13 +14,13 @@ export default async function Home() {
     console.error("Failed to load repo:", e);
   }
   if (!repo) {
-    return `No repositories found`;
+    return <div>No repositories found</div>;
   }
   return (
-    <div>
-      {repo.map((r) => (
-        <p key={r.id}>{r.name}</p>
-      ))}
-    </div>
+    <>
+      <Header />
+      <MainContent />
+      <Footer />
+    </>
   );
 }

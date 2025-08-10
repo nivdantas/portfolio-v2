@@ -5,13 +5,33 @@
   --foreground: #171717;
 }
 
+@utility pause {
+  animation-play-state: paused;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-site: #121717;
+  --color-site-800: #1d2323;
+  --color-site-700: #282f2f;
+  --color-site-600: #464d4d;
+  --color-site-500: #646a6a;
+  --color-site-300: #9ea0a0;
+  --color-detalhe: #364545;
+}
+@theme {
+  --animate-glowing: glowing 20s linear infinite;
+  --animate-stroke: stroke 2s infinite;
 }
 
+@layer components {
+  .hover-underline {
+    @apply inline-block relative after:absolute after:w-full after:h-px after:bottom-0 after:left-0 after:bg-site dark:after:bg-white after:transition-transform after:duration-300 after:ease-out after:[transform:scaleX(0)] after:[transform-origin:bottom_right] hover:after:[transform:scaleX(1)] hover:after:[transform-origin:bottom_left];
+  }
+}
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;

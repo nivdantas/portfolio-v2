@@ -1,14 +1,13 @@
-"use client";
 import CardStatic from "@/components/CardStatic";
 import CardExpandable from "@/components/CardExpandable";
 import React from "react";
-import { tObject } from "@/translation";
-import useTranslation from "@/hooks/useTranslation";
+import { useTranslations } from "next-intl";
+
 interface MainContentProps {
   children?: React.ReactNode;
 }
 export default function MainContent({ children }: MainContentProps) {
-  const t = useTranslation(tObject);
+  const t = useTranslations("MainContent");
   return (
     <main className="flex justify-center mx-10">
       <div className="max-w-lg xl:max-w-xl flex flex-col justify-center">
@@ -17,7 +16,7 @@ export default function MainContent({ children }: MainContentProps) {
           id="dev-title"
           className="text-site-500 dark:text-neutral-500 text-sm lg:text-lg text-center mt-1"
         >
-          {t.devTitle}
+          {t("devTitle")}
         </h3>
         <ul className="flex gap-4 justify-center mt-2 xl:gap-6">
           <li className="hover-underline after:-bottom-1 dark:after:bg-neutral-300">
@@ -83,30 +82,30 @@ export default function MainContent({ children }: MainContentProps) {
           id="paragraph"
           className="text-site-700 dark:text-neutral-300 text-xs lg:text-sm xl:text-[16px] mt-5 text-pretty"
         >
-          {t.paragraph}
+          {t("paragraph")}
         </p>
         <section className="mt-5">
           <h2
             id="title-one"
             className="text-site dark:text-white text-xl xl:text-2xl"
           >
-            {t.educationTitle}
+            {t("educationTitle")}
           </h2>
           <CardStatic
-            title={t.degreeTitle}
-            subtitle={t.degreeSubtitle}
+            title={t("degreeTitle")}
+            subtitle={t("degreeSubtitle")}
             year="2020-2025"
           ></CardStatic>
           <CardExpandable
-            title={t.continuedTitle}
-            subtitle={t.continuedSubtitle}
+            title={t("continuedTitle")}
+            subtitle={t("continuedSubtitle")}
             year="2021-2024"
           >
             <p
               id="ex-paragraph-one"
               className="text-site-800 dark:text-neutral-300 text-sm xl:text-[16px] text-pretty"
             >
-              {t.continuedDesc}
+              {t("continuedDesc")}
             </p>
           </CardExpandable>
 
@@ -114,35 +113,38 @@ export default function MainContent({ children }: MainContentProps) {
             id="title-two"
             className="text-site dark:text-white text-xl xl:text-2xl mt-6"
           >
-            {t.experienceTitle}
+            {t("experienceTitle")}
           </h2>
           <CardExpandable
-            title={t.internTitle}
-            subtitle={t.internSubtitle}
+            title={t("internTitle")}
+            subtitle={t("internSubtitle")}
             year="2024-2025"
           >
             <ul
               id="ex-paragraph-two"
               className="text-site-800 dark:text-neutral-300 text-sm xl:text-[16px] text-pretty ml-2 list-disc grid gap-4"
             >
-              <li>{t.internDesc1}</li>
-              <li>{t.internDesc2}</li>
-              <li>{t.internDesc3}</li>
-              <li>{t.internDesc4}</li>
-              <li>{t.internDesc5}</li>
+              <li>{t("internDesc1")}</li>
+              <li>{t("internDesc2")}</li>
+              <li>{t("internDesc3")}</li>
+              <li>{t("internDesc4")}</li>
+              <li>{t("internDesc5")}</li>
             </ul>
           </CardExpandable>
           <h2
             id="title-three"
             className="text-site dark:text-white text-xl xl:text-2xl mt-6"
           >
-            {t.languagesTitle}
+            {t("languagesTitle")}
           </h2>
           <CardStatic
-            title={t.portuguese}
-            subtitle={t.portugueseLevel}
+            title={t("portuguese")}
+            subtitle={t("portugueseLevel")}
           ></CardStatic>
-          <CardStatic title={t.english} subtitle={t.englishLevel}></CardStatic>
+          <CardStatic
+            title={t("english")}
+            subtitle={t("englishLevel")}
+          ></CardStatic>
         </section>
       </div>
     </main>

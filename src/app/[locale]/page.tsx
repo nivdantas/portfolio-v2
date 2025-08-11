@@ -1,12 +1,20 @@
-import Image from "next/image";
 import { sortRepo } from "./data";
 import type { GitAPI } from "./data";
 import Header from "@/components/Header";
 import MainContent from "@/components/MainContent";
 import Footer from "@/components/Footer";
 import Typed from "@/components/Typed";
-import CardStatic from "./components/CardStatic";
-export default async function Home() {
+import CardStatic from "@/components/CardStatic";
+import { use } from "react";
+import { setRequestLocale } from "next-intl/server";
+
+export default async function Home({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   let repo: GitAPI[] | null = null;
   try {
     repo = await sortRepo();

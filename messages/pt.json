@@ -1,0 +1,28 @@
+{
+  "MainContent": {
+    "devTitle": "Desenvolvedor Full-stack",
+    "paragraph": "Olá, me chamo Nivaldo Dantas — desenvolvedor full-stack atualmente formado em engenhenharia de software — com sólida base acadêmica e experiência prática no desenvolvimento de aplicações mobile e web.",
+    "educationTitle": "Educação",
+    "degreeTitle": "Bacharelado em Engenharia de Software",
+    "degreeSubtitle": "Instituto Federal do Amazonas - IFAM",
+    "continuedTitle": "Formação Continuada",
+    "continuedSubtitle": "Projeto Aranouá - Instituto Federal do Amazonas",
+    "continuedDesc": "Atividade extracurricular em parceria do IFAM com a Samsung com finalidade de capacitar, aperfeiçoar e atualizar o estudante, garantindo a constante modernização das competências e atualizar saberes com foco no desempenho, aprimoramento focado em cursos de React, React Native, Programação para Dispositivos Móveis, Banco de Dados, entre outros, com projetos reais.",
+    "experienceTitle": "Experiência",
+    "internTitle": "Estagiário",
+    "internSubtitle": "Tribunal de Contas do Amazonas - TCE/AM",
+    "internDesc1": "Desenvolvimento e manutenção de aplicações web para setores internos.",
+    "internDesc2": "Participação na concepção de novos projetos colaborando com equipes multidisciplinares para levantamento de requisitos e definição de funcionalidades.",
+    "internDesc3": "Implementação de automações para otimizar fluxos de trabalho e reduzir tarefas manuais, utilizando scripts e integrações entre sistemas internos.",
+    "internDesc4": "Utilização de ferramentas de kanban para organização, acompanhamento e priorização das tarefas, promovendo eficiência nos fluxos de trabalho.",
+    "internDesc5": "Participação em reuniões de planejamento e retrospectiva, contribuindo para o alinhamento das demandas e melhoria contínua dos processos.",
+    "languagesTitle": "Idiomas",
+    "portuguese": "Português",
+    "portugueseLevel": "Nativo",
+    "english": "Inglês",
+    "englishLevel": "Avançado (C1)"
+  },
+  "Footer": {
+    "footer": "© 2025 Nivaldo Dantas. Todos os direitos reservados."
+  }
+}

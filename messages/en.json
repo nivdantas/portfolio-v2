@@ -1,0 +1,28 @@
+{
+  "MainContent": {
+    "devTitle": "Fullstack Developer",
+    "paragraph": "Hello, my name is Nivaldo Dantas — a full-stack developer with a strong academic foundation and practical experience in developing mobile and web applications.",
+    "educationTitle": "Education",
+    "degreeTitle": "Bachelor in Software Engineering",
+    "degreeSubtitle": "Federal Institute of Amazonas - IFAM",
+    "continuedTitle": "Continued Education",
+    "continuedSubtitle": "Aranouá Project - Federal Institute of Amazonas",
+    "continuedDesc": "Extracurricular activity in partnership between IFAM and Samsung to train, improve, and update students, ensuring constant modernization of skills and knowledge with a focus on performance, including courses in React, React Native, Mobile Programming, Databases, and real projects.",
+    "experienceTitle": "Experience",
+    "internTitle": "Intern",
+    "internSubtitle": "Amazonas State Court of Accounts - TCE/AM",
+    "internDesc1": "Development and maintenance of web applications for internal departments.",
+    "internDesc2": "Participation in the conception of new projects, collaborating with multidisciplinary teams for requirements gathering and feature definition.",
+    "internDesc3": "Implementation of automations to optimize workflows and reduce manual tasks, using scripts and integrations between internal systems.",
+    "internDesc4": "Use of Kanban tools for organization, tracking, and prioritization of tasks, promoting efficiency in workflows.",
+    "internDesc5": "Participation in planning and retrospective meetings, contributing to demand alignment and continuous process improvement.",
+    "languagesTitle": "Languages",
+    "portuguese": "Portuguese",
+    "portugueseLevel": "Native",
+    "english": "English",
+    "englishLevel": "Advanced (C1)"
+  },
+  "Footer": {
+    "footer": "© 2025 Nivaldo Dantas. All rights reserved."
+  }
+}

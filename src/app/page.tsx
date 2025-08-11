@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import MainContent from "@/components/MainContent";
 import Footer from "@/components/Footer";
 import Typed from "@/components/Typed";
+import CardStatic from "./components/CardStatic";
 export default async function Home() {
   let repo: GitAPI[] | null = null;
   try {
@@ -21,6 +22,13 @@ export default async function Home() {
       <MainContent>
         <Typed strings={["Nivaldo Dantas"]} loop={false}></Typed>
       </MainContent>
+      {repo.map((e) => (
+        <CardStatic
+          key={e.id}
+          title={e.name}
+          subtitle={e.language ? e.language : ""}
+        ></CardStatic>
+      ))}
       <Footer />
     </>
   );

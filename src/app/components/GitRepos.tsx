@@ -44,24 +44,21 @@ const GitRepos = async () => {
   const t = await getTranslations("Projects");
   return (
     <>
-      {/*  <h2 className="text-site dark:text-white text-xl xl:text-2xl mt-6">
-        Projetos
-      </h2> */}
-      <div className="grid grid-cols-[50px_1fr] w-xl bg-neutral-100 h-10 rounded-md self-center mt-10 mb-3 items-center focus-within:ring-2 focus-within:ring-neutral-500 transition-all duration-300">
+      <div className="grid grid-cols-[50px_1fr] w-xl bg-neutral-100 dark:bg-neutral-800 h-10 rounded-md self-center mt-10 mb-3 items-center focus-within:ring-2 focus-within:ring-neutral-500 dark:focus-within:ring-neutral-400 transition-all duration-300">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           height="24px"
           viewBox="0 -960 960 960"
           width="24px"
           fill="currentColor"
-          className="text-neutral-400 ml-4"
+          className="text-neutral-400 dark:text-neutral-200 ml-4"
         >
           <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z" />
         </svg>
         <input
           type="text"
           placeholder={t("search")}
-          className="text-neutral-600 text-xs bg-transparent border-none outline-none"
+          className="text-neutral-600 dark:text-neutral-50 text-xs bg-transparent border-none outline-none"
         />
       </div>
       {firstFive.map((e) => (

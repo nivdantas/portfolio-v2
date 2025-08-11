@@ -21,6 +21,7 @@ const CardStatic = ({ title, subtitle, year, project }: Card) => {
         <span className="w-5 h-1 absolute bg-gradient-to-b from-site-300 to-site-700 dark:from-[#344C50] dark:to-[#356C6C] left-4 top-17 lg:top-21"></span>
       </div>
     );
+
   if (Array.isArray(subtitle) && project) {
     return (
       <div className="flex justify-center self-center w-3xl">
@@ -49,9 +50,10 @@ const CardStatic = ({ title, subtitle, year, project }: Card) => {
               href={project}
               target="_blank"
               rel="noopener noreferrer"
+              className="hover-underline"
               aria-label={`Project: ${title}`}
             >
-              GitHub
+              GitHub →
             </a>
           </p>
         </div>
@@ -75,14 +77,15 @@ const CardStatic = ({ title, subtitle, year, project }: Card) => {
             {subtitle}
           </h4>
           <span className="w-full h-0.25 bg-neutral-200 dark:bg-neutral-500 mt-2"></span>
-          <p className="text-neutral-500 dark:text-neutral-200 text-[12px] mt-2 font-regular">
+          <p className="text-neutral-500 dark:text-neutral-200 text-[12px] mt-2 font-regular hover:underline">
             <a
               href={project}
               target="_blank"
               rel="noopener noreferrer"
+              className="hover-underline"
               aria-label={`Project: ${title}`}
             >
-              GitHub
+              GitHub →
             </a>
           </p>
         </div>

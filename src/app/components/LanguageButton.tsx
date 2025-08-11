@@ -9,8 +9,10 @@ const LanguageButton = () => {
   const [isPending, startTransition] = useTransition();
   const switchLocale = (newLocale: string) => {
     if (newLocale !== locale) {
-      router.replace(pathname, { locale: newLocale });
-      router.refresh();
+      startTransition(() => {
+        router.replace(pathname, { locale: newLocale, scroll: false });
+        router.refresh();
+      });
     }
   };
 
@@ -19,11 +21,7 @@ const LanguageButton = () => {
       <button
         id="button-PT"
         aria-label="Change language to Portuguese"
-        onClick={() => {
-          startTransition(() => {
-            switchLocale("pt");
-          });
-        }}
+        onClick={() => switchLocale("pt")}
         className={`text-xs lg:text-sm xl:text-lg text-site-800 dark:text-white hover-underline px-2 py-1 mt-4 ${
           locale === "pt" ? "opacity-100" : "opacity-50"
         }`}
@@ -36,9 +34,7 @@ const LanguageButton = () => {
       <button
         id="button-en"
         aria-label="Change language to English"
-        onClick={() => {
-          switchLocale("en");
-        }}
+        onClick={() => switchLocale("en")}
         className={`text-xs lg:text-sm xl:text-lg text-site-800 dark:text-white hover-underline px-2 py-1 mt-4 ${
           locale === "en" ? "opacity-100" : "opacity-50"
         }`}

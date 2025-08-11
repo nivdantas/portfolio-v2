@@ -1,11 +1,12 @@
 import ThemeButton from "./ThemeButton";
 import LanguageButton from "./LanguageButton";
-export default function Header() {
-  // const [mounted, setMounted] = useState(false);
+const Header = () => {
   return (
-    <header className="flex justify-end mr-4 sticky z-50 top-0">
+    <header className="flex justify-end mr-4 md:sticky z-50 top-0">
       <LanguageButton></LanguageButton>
       <ThemeButton></ThemeButton>
     </header>
   );
-}
+};
+
+export default Header;

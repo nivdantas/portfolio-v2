@@ -24,5 +24,8 @@
   },
   "Footer": {
     "footer": "© 2025 Nivaldo Dantas. All rights reserved."
+  },
+  "Projects": {
+    "search": "Search Projects by name, description and more!"
   }
 }

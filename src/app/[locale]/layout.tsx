@@ -24,16 +24,16 @@ export const metadata: Metadata = {
   description: "Nivaldo Dantas - Website",
 };
 
-export function generateStaticParams() {
+export const generateStaticParams = () => {
   return routing.locales.map((locale) => ({ locale }));
-}
-export default async function RootLayout({
+};
+const RootLayout = async ({
   children,
   params,
 }: Readonly<{
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
-}>) {
+}>) => {
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) {
     notFound();
@@ -49,4 +49,5 @@ export default async function RootLayout({
       </body>
     </html>
   );
-}
+};
+export default RootLayout;

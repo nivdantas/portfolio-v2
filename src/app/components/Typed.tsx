@@ -11,13 +11,13 @@ interface TypedProps {
   showCursor?: boolean;
 }
 
-export default function TypedComponent({
+const TypedComponent = ({
   strings,
   typeSpeed = 50,
   backSpeed = 50,
   loop = true,
   showCursor = false,
-}: TypedProps) {
+}: TypedProps) => {
   const el = React.useRef<HTMLSpanElement | null>(null);
   const typed = useRef<Typed | null>(null);
 
@@ -45,4 +45,6 @@ export default function TypedComponent({
       ref={el}
     />
   );
-}
+};
+
+export default TypedComponent;

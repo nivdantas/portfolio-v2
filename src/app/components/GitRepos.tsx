@@ -1,0 +1,82 @@
+import getRepo from "@/[locale]/data";
+import type { GitAPI } from "@/[locale]/data";
+import CardStatic from "./CardStatic";
+import { getTranslations } from "next-intl/server";
+let repo: GitAPI[] | null = null;
+
+const GitRepos = async () => {
+  try {
+    repo = await getRepo();
+  } catch (e) {
+    console.error("Failed to load repo:", e);
+  }
+  if (!repo) {
+    return <div>No repositories found</div>;
+  }
+  const getSubTitle = (param: string | string[]): string | string[] => {
+    function camelCase(string: string): string {
+      string = string.charAt(0).toUpperCase() + string.slice(1);
+      string = string.includes("js") ? string.replace("js", "JS") : string;
+      return string;
+    }
+    if (Array.isArray(param)) {
+      const st: string[] = [];
+      param.forEach((p) => {
+        st.push(camelCase(p));
+      });
+      return st;
+    }
+
+    switch (param) {
+      case "CSS":
+        return ["CSS", "HTML"];
+      case "HTML":
+        return ["CSS", "HTML"];
+      case "JavaScript":
+        return ["JavaScript", "CSS", "HTML"];
+      case "TypeScript":
+        return ["TypeScript", "CSS", "HTML"];
+      default:
+        return camelCase(param);
+    }
+  };
+  const firstFive = repo.slice(0, 5);
+  const t = await getTranslations("Projects");
+  return (
+    <>
+      {/*  <h2 className="text-site dark:text-white text-xl xl:text-2xl mt-6">
+        Projetos
+      </h2> */}
+      <div className="grid grid-cols-[50px_1fr] w-xl bg-neutral-100 h-10 rounded-md self-center mt-10 mb-3 items-center focus-within:ring-2 focus-within:ring-neutral-500 transition-all duration-300">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="24px"
+          viewBox="0 -960 960 960"
+          width="24px"
+          fill="currentColor"
+          className="text-neutral-400 ml-4"
+        >
+          <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z" />
+        </svg>
+        <input
+          type="text"
+          placeholder={t("search")}
+          className="text-neutral-600 text-xs bg-transparent border-none outline-none"
+        />
+      </div>
+      {firstFive.map((e) => (
+        <CardStatic
+          key={e.id}
+          title={e.name}
+          subtitle={
+            e.topics.length && e.topics && e.language
+              ? getSubTitle(e.topics)
+              : getSubTitle(e.language ?? "")
+          }
+          project={e.html_url}
+        ></CardStatic>
+      ))}
+    </>
+  );
+};
+export default GitRepos;

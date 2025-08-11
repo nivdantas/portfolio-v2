@@ -8,12 +8,7 @@ interface Card {
   children: React.ReactNode;
 }
 
-export default function CardExpandable({
-  title,
-  subtitle,
-  year,
-  children,
-}: Card) {
+const CardExpandable = ({ title, subtitle, year, children }: Card) => {
   const [isMobile, setIsMobile] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
   const contentId = useId();
@@ -85,4 +80,6 @@ export default function CardExpandable({
       <span className="w-5 h-1 absolute bg-gradient-to-b from-site-300 to-site-700 dark:from-[#344C50] dark:to-[#356C6C] left-4 top-17 lg:top-21"></span>
     </div>
   );
-}
+};
+
+export default CardExpandable;

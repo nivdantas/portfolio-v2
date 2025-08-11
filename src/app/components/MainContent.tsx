@@ -1,17 +1,22 @@
 import CardStatic from "@/components/CardStatic";
 import CardExpandable from "@/components/CardExpandable";
-import React from "react";
 import { useTranslations } from "next-intl";
+import React from "react";
+import TypedComponent from "@/components/Typed";
+
+const typed = (
+  <TypedComponent strings={["Nivaldo Dantas"]} loop={false}></TypedComponent>
+);
 
 interface MainContentProps {
   children?: React.ReactNode;
 }
-export default function MainContent({ children }: MainContentProps) {
+const MainContent = ({ children }: MainContentProps) => {
   const t = useTranslations("MainContent");
   return (
     <main className="flex justify-center mx-10">
       <div className="max-w-lg xl:max-w-xl flex flex-col justify-center">
-        {children}
+        {typed}
         <h3
           id="dev-title"
           className="text-site-500 dark:text-neutral-500 text-sm lg:text-lg text-center mt-1"
@@ -146,7 +151,10 @@ export default function MainContent({ children }: MainContentProps) {
             subtitle={t("englishLevel")}
           ></CardStatic>
         </section>
+        {children}
       </div>
     </main>
   );
-}
+};
+
+export default MainContent;

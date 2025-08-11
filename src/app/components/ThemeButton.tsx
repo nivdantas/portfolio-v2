@@ -1,9 +1,17 @@
 "use client";
 
 import { useTheme } from "next-themes";
-import { useEffect, useState, useContext } from "react";
-export default function ThemeButton() {
+import { useEffect, useState } from "react";
+const ThemeButton = () => {
+  const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+  if (!mounted) {
+    return null;
+  }
   return (
     <button
       id="theme-toggle"
@@ -35,4 +43,6 @@ export default function ThemeButton() {
       )}
     </button>
   );
-}
+};
+
+export default ThemeButton;

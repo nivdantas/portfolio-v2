@@ -1,3 +1,5 @@
+import { NextResponse } from "next/server";
+
 export interface GitAPI {
   id: number;
   name: string;
@@ -6,9 +8,13 @@ export interface GitAPI {
   language: string | null;
   description: string | null;
   topics: string[];
+  html_url: string;
 }
-async function fetchApi<T>(url: string): Promise<T> {
+const fetchApi = async (url: string): Promise<GitAPI[]> => {
   const token = process.env.MY_TOKEN;
+  if (!token) {
+    throw new Error("Invalid token");
+  }
   const revalidate = 60 * 60;
   const options = {
     headers: {
@@ -22,17 +28,21 @@ async function fetchApi<T>(url: string): Promise<T> {
   if (!res.ok) {
     throw new Error(`Failed to fetch: ${res.status}`);
   }
-  const repos = await res.json();
-  return repos;
-}
-const getRepo = async (): Promise<GitAPI[]> => {
-  const repositories = await fetchApi<GitAPI[]>(
-    "https://api.github.com/users/Nivdantas/repos"
-  );
-  const sortedRepo = repositories.sort((a, b) => {
+  const repos: GitAPI[] = await res.json();
+  const sortedRepo = repos.sort((a, b) => {
     return new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
   });
   return sortedRepo;
 };
+export const GET = async () => {
+	try{
+		const repos = await fetchApi('https://api.github.com/users/NivDantas/repos');
+		return NextResponse.json(repos);
+	}
+	catch(error){
+		console.error(error);
+		return NextResponse.json({error: error}, {status: 500})
+	}
+};
 
-export default getRepo;
+export default GET;

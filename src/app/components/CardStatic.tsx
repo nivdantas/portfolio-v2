@@ -1,6 +1,10 @@
+interface SubtitleItem {
+  id: string;
+  name: string;
+}
 interface Card {
   title: string;
-  subtitle: string | string[];
+  subtitle: string | SubtitleItem[];
   year?: string;
   project?: string;
 }
@@ -13,7 +17,7 @@ const CardStatic = ({ title, subtitle, year, project }: Card) => {
           {title}
         </h3>
         <h4 className="text-site-500 dark:text-neutral-400 text-[10px] lg:text-sm mt-1">
-          {subtitle}
+          {subtitle as string}
         </h4>
         <h4 className="text-site-500 dark:text-neutral-400 text-[10px] lg:text-sm mt-2 justify-self-end">
           {year}
@@ -36,10 +40,10 @@ const CardStatic = ({ title, subtitle, year, project }: Card) => {
             {subtitle.map((s) => {
               return (
                 <h4
-                  key={s}
+                  key={s.id}
                   className="text-site-600 dark:text-neutral-200 text-[10px] lg:text-sm mt-1 mr-2 inline bg-neutral-100 dark:bg-site-800 px-2 py-1 rounded-full border-1 border-neutral-300 dark:border-neutral-900"
                 >
-                  {s}
+                  {s.name}
                 </h4>
               );
             })}
@@ -74,7 +78,7 @@ const CardStatic = ({ title, subtitle, year, project }: Card) => {
             id="lan-subparagraph-one"
             className="text-site-500 dark:text-neutral-400 text-[10px] lg:text-sm mt-1"
           >
-            {subtitle}
+            {subtitle as string}
           </h4>
           <span className="w-full h-0.25 bg-neutral-200 dark:bg-neutral-500 mt-2"></span>
           <p className="text-neutral-500 dark:text-neutral-200 text-[12px] mt-2 font-regular hover:underline">
@@ -104,7 +108,7 @@ const CardStatic = ({ title, subtitle, year, project }: Card) => {
         id="lan-subparagraph-one"
         className="text-site-500 dark:text-neutral-400 text-[10px] lg:text-sm mt-1"
       >
-        {subtitle}
+        {subtitle as string}
       </h4>
     </div>
   );

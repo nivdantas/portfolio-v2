@@ -1,7 +1,6 @@
 import Header from "@/components/Header";
 import MainContent from "@/components/MainContent";
 import Footer from "@/components/Footer";
-import Typed from "@/components/Typed";
 import { setRequestLocale } from "next-intl/server";
 import GitRepos from "@/components/GitRepos";
 
@@ -12,7 +11,7 @@ const Home = async ({ params }: { params: Promise<{ locale: string }> }) => {
     <>
       <Header />
       <MainContent>
-        <GitRepos></GitRepos>
+      <GitRepos></GitRepos>
       </MainContent>
       <Footer />
     </>

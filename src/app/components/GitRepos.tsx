@@ -1,16 +1,16 @@
-import getRepo from "@/[locale]/data";
-import type { GitAPI } from "@/[locale]/data";
+"use client";
 import CardStatic from "./CardStatic";
-import { getTranslations } from "next-intl/server";
-let repo: GitAPI[] | null = null;
-
-const GitRepos = async () => {
-  try {
-    repo = await getRepo();
-  } catch (e) {
-    console.error("Failed to load repo:", e);
+import { useRepos } from "@/context/RepoContext";
+import { useState } from "react";
+import { useTranslations } from "next-intl";
+const GitRepos = () => {
+  const { repos, isLoading } = useRepos();
+  const [search, setSearch] = useState("");
+  const t = useTranslations("Projects");
+  if (isLoading) {
+    return <div>Loading repositories...</div>;
   }
-  if (!repo) {
+  if (!repos) {
     return <div>No repositories found</div>;
   }
   const getSubTitle = (param: string | string[]): string | string[] => {
@@ -40,10 +40,23 @@ const GitRepos = async () => {
         return camelCase(param);
     }
   };
-  const firstFive = repo.slice(0, 5);
-  const t = await getTranslations("Projects");
+
+  const filteredRepos =
+    search.length > 0
+      ? repos.filter(
+          (r) =>
+            r.name.toLowerCase().includes(search.toLowerCase()) ||
+            (r.description &&
+              r.description.toLowerCase().includes(search.toLowerCase())) ||
+            r.topics.some((topic) =>
+              topic.toLowerCase().includes(search.toLowerCase()),
+            ) ||
+            (r.language &&
+              r.language.toLowerCase().includes(search.toLowerCase())),
+        )
+      : repos.slice(0, 5);
   return (
-    <>
+  <>
       <div className="grid grid-cols-[50px_1fr] w-xl bg-neutral-100 dark:bg-neutral-800 h-10 rounded-md self-center mt-10 mb-3 items-center focus-within:ring-2 focus-within:ring-neutral-500 dark:focus-within:ring-neutral-400 transition-all duration-300">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -59,21 +72,37 @@ const GitRepos = async () => {
           type="text"
           placeholder={t("search")}
           className="text-neutral-600 dark:text-neutral-50 text-xs bg-transparent border-none outline-none"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
         />
       </div>
-      {firstFive.map((e) => (
-        <CardStatic
-          key={e.id}
-          title={e.name}
-          subtitle={
-            e.topics.length && e.topics && e.language
-              ? getSubTitle(e.topics)
-              : getSubTitle(e.language ?? "")
-          }
-          project={e.html_url}
-        ></CardStatic>
-      ))}
-    </>
+      <div className="self-center min-h-[696px]">
+      {filteredRepos.map((r) => {
+        const topics = getSubTitle(r.topics);
+        const languages = getSubTitle(r.language ?? "");
+
+        const combined = [
+          ...(Array.isArray(topics) ? topics : [topics]),
+          ...(Array.isArray(languages) ? languages : [languages]),
+        ];
+
+        const uniqueSubtitleStrings = [...new Set(combined.filter(Boolean))];
+
+        const subtitleForCard = uniqueSubtitleStrings.map((tag) => ({
+          id: tag,
+          name: tag,
+        }));
+        return (
+          <CardStatic
+          	key={r.id}
+            title={r.name}
+            subtitle={subtitleForCard}
+            project={r.html_url}
+          ></CardStatic>
+        );
+      })}
+      </div>
+  </>
   );
 };
 export default GitRepos;

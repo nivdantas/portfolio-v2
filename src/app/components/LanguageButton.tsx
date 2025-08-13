@@ -1,18 +1,14 @@
 "use client";
 import { usePathname, useRouter } from "@/i18n/navigation";
 import { useLocale } from "next-intl";
-import { useTransition } from "react";
 const LanguageButton = () => {
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
-  const [isPending, startTransition] = useTransition();
   const switchLocale = (newLocale: string) => {
     if (newLocale !== locale) {
-      startTransition(() => {
         router.replace(pathname, { locale: newLocale, scroll: false });
-        router.refresh();
-      });
+        router.refresh()
     }
   };
 

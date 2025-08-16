@@ -6,8 +6,10 @@ A sophisticated, performance-optimized portfolio website built with NextJS, Reac
 
 This is my advanced portfolio built with industry-standard tools and best practices. I share a little of my projects, experiences, skills and more.
 \
-![Phos](./public/Phos.gif)
 
+<div align="center">
+<img src="./public/Phos.gif" alt="Phos">
+</div>
 ## 🛠️ Tech Stack
 
 - **Vite** - Modern build tool.

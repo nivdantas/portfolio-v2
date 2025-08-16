@@ -5,6 +5,7 @@ A sophisticated, performance-optimized portfolio website built with NextJS, Reac
 ## About
 
 This is my advanced portfolio built with industry-standard tools and best practices. I share a little of my projects, experiences, skills and more.
+\
 ![Phos](./public/Phos.gif)
 
 ## 🛠️ Tech Stack

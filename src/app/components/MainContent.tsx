@@ -86,6 +86,17 @@ const MainContent = ({ children }: MainContentProps) => {
         >
           {t("paragraph")}
         </p>
+        <div id="stacks" className="mt-2 self-center p-4">
+          <h1 className="text-stone-700 dark:text-stone-100 relative overflow-hidden bg-white dark:bg-site text-md">
+            Stacks: NextJS, React, TypeScript, NodeJS, TailwindCSS, SQLite
+            <div>
+              <div className="light:light-frost-item dark:frost-item"></div>
+              <div className="light:light-frost-item dark:frost-item"></div>
+              <div className="light:light-frost-item dark:frost-item"></div>
+              <div className="light:light-frost-item dark:frost-item"></div>
+            </div>
+          </h1>
+        </div>
         <section className="mt-5">
           <h2
             id="title-one"

@@ -14,7 +14,7 @@ const SearchBar = ({
   placeholder: string;
 }) => {
   return (
-    <div className="grid grid-cols-[50px_1fr] w-xl bg-neutral-100 dark:bg-neutral-800 h-10 rounded-md self-center mt-10 mb-3 items-center focus-within:ring-2 focus-within:ring-neutral-500 dark:focus-within:ring-neutral-400 transition-all duration-300">
+    <div className="grid grid-cols-[50px_1fr] lg:w-xl md:w-md w-xs bg-neutral-100 dark:bg-neutral-800 h-10 rounded-md self-center mt-10 mb-3 items-center focus-within:ring-2 focus-within:ring-neutral-500 dark:focus-within:ring-neutral-400 transition-all duration-300">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         height="24px"
@@ -28,7 +28,7 @@ const SearchBar = ({
       <input
         type="text"
         placeholder={placeholder}
-        className="text-neutral-600 dark:text-neutral-50 text-xs bg-transparent border-none outline-none"
+        className="text-neutral-600 dark:text-neutral-50 lg:text-xs bg-transparent border-none outline-none text-[10px]"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
@@ -97,7 +97,7 @@ const GitRepos = () => {
         setSearch={setSearch}
         placeholder={t("search")}
       />
-      <div className="self-center min-h-[696px]">
+      <div className="self-center lg:min-h-[696px]">
         {filteredRepos.map((r) => {
           const topics = getLanguage(r.topics);
           const languages = getLanguage(r.language ?? "");

@@ -29,7 +29,7 @@ const CardStatic = ({ title, subtitle, year, project, languages }: Card) => {
 
   if (Array.isArray(languages) && project) {
     return (
-      <div className="flex justify-center self-center w-3xl">
+      <div className="flex justify-center self-center lg:w-3xl md:w-xl w-xs transition-all duration-700">
         <div className="border-1 border-neutral-300 dark:border-detalhe rounded-lg py-3 px-4 grid grid-cols-1 relative mt-1.5 w-full mb-2 hover:shadow-xl transition-all duration-700">
           <h3
             id="lan-subtitle-one"
@@ -72,7 +72,7 @@ const CardStatic = ({ title, subtitle, year, project, languages }: Card) => {
   }
   if (project) {
     return (
-      <div className="flex justify-center self-center w-3xl">
+      <div className="flex justify-center self-center lg:w-3xl md:w-xl w-xs transition-all duration-700">
         <div className="border-1 border-neutral-300 dark:border-detalhe rounded-lg py-3 px-4 grid grid-cols-1 relative mt-1.5 w-full mb-2 hover:shadow-xl transition-all duration-700">
           <h3
             id="lan-subtitle-one"

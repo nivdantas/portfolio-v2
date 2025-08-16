@@ -25,10 +25,6 @@ const RootLayout = async ({
   }
 
   setRequestLocale(locale);
-  return (
-          <NextIntlClientProvider>
-          {children}
-        </NextIntlClientProvider>
-  );
+  return <NextIntlClientProvider>{children}</NextIntlClientProvider>;
 };
 export default RootLayout;

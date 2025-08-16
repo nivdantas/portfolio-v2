@@ -5,17 +5,19 @@
     "educationTitle": "Educação",
     "degreeTitle": "Bacharelado em Engenharia de Software",
     "degreeSubtitle": "Instituto Federal do Amazonas - IFAM",
+    "degreeYear": "Jan. 2020 - Jan. 2025",
     "continuedTitle": "Formação Continuada",
     "continuedSubtitle": "Projeto Aranouá - Instituto Federal do Amazonas",
+    "continuedYear": "Jan. 2021 - Dez. 2023",
     "continuedDesc": "Atividade extracurricular em parceria do IFAM com a Samsung com finalidade de capacitar, aperfeiçoar e atualizar o estudante, garantindo a constante modernização das competências e atualizar saberes com foco no desempenho, aprimoramento focado em cursos de React, React Native, Programação para Dispositivos Móveis, Banco de Dados, entre outros, com projetos reais.",
     "experienceTitle": "Experiência",
     "internTitle": "Estagiário",
     "internSubtitle": "Tribunal de Contas do Amazonas - TCE/AM",
-    "internDesc1": "Desenvolvimento e manutenção de aplicações web para setores internos.",
-    "internDesc2": "Participação na concepção de novos projetos colaborando com equipes multidisciplinares para levantamento de requisitos e definição de funcionalidades.",
-    "internDesc3": "Implementação de automações para otimizar fluxos de trabalho e reduzir tarefas manuais, utilizando scripts e integrações entre sistemas internos.",
-    "internDesc4": "Utilização de ferramentas de kanban para organização, acompanhamento e priorização das tarefas, promovendo eficiência nos fluxos de trabalho.",
-    "internDesc5": "Participação em reuniões de planejamento e retrospectiva, contribuindo para o alinhamento das demandas e melhoria contínua dos processos.",
+    "internYear": "Jan. 2024 - Mai. 2025",
+    "internDesc1": "Desenvolvimento de aplicação web informativo sobre governança de TI, utilizando tecnologias como React, NestJS, TypeScript, SQLite, Docker e Prisma, que capacitou o setor para receber formulários de seus supervisionados.",
+    "internDesc2": "Desenvolvimento de questionários para avaliação anual da Lei Geral de Proteção de Dados (LGPD) utilizando a plataforma LimeSurvey, com scripts JavaScript, o que possibilitou a coleta de dados de 70% dos órgãos do estado do Amazonas.",
+    "internDesc3": "Implementação de automações para otimizar fluxos de trabalho e reduzir tarefas manuais, utilizando scripts com a linguagem Python, por meio da biblioteca Selenium, houve a automação de processos repetitivos feitos nos principais portais do TCE/AM.",
+    "internDesc4": "Utilização de ferramentas de Kanban para organização, por meio do site Trello, realçando o acompanhamento e priorização das tarefas, reuniões semanais para brainstorming e planejamento de requisitos",
     "languagesTitle": "Idiomas",
     "portuguese": "Português",
     "portugueseLevel": "Nativo",
@@ -26,6 +28,8 @@
     "footer": "© 2025 Nivaldo Dantas. Todos os direitos reservados."
   },
   "Projects": {
-    "search": "Buscar projetos por nome, descrição e mais!"
+    "search": "Buscar projetos por nome, descrição e mais!",
+    "repoLoading": "Carregando Repositórios...",
+    "repoError": "Erro ao carregar repositórios. Por favor, tente novamente mais tarde."
   }
 }

@@ -21,16 +21,45 @@
 @theme {
   --animate-glowing: glowing 20s linear infinite;
   --animate-stroke: stroke 2s infinite;
+  --animate-typewriter: typewriter 1s steps(50) 0.5s 1 normal both,
+    blinkingCursor 300ms steps(30) infinite normal;
+  @keyframes typewriter {
+    from {
+      width: 0;
+    }
+    to {
+      width: 14ch;
+      border-right-width: 0;
+    }
+  }
+  @keyframes blinkingCursor {
+    from {
+      border-right-color: rgba(0, 0, 0, 0.75);
+    }
+    to {
+      border-right-color: transparent;
+    }
+  }
 }
 
 @layer components {
   .hover-underline {
     @apply inline-block relative after:absolute after:w-full after:h-px after:bottom-0 after:left-0 after:bg-site dark:after:bg-white after:transition-transform after:duration-300 after:ease-out after:[transform:scaleX(0)] after:[transform-origin:bottom_right] hover:after:[transform:scaleX(1)] hover:after:[transform-origin:bottom_left];
   }
+  .cursor-animation {
+    position: relative;
+    width: 12em;
+    margin: 0 auto;
+    border-right: 2px solid rgba(0, 0, 0, 0.75);
+    font-size: 30px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    transform: translateY(-50%);
+  }
 }
 @media (prefers-color-scheme: dark) {
   :root {
-
   }
 }
 

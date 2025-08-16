@@ -35,14 +35,13 @@ const fetchApi = async (url: string): Promise<GitAPI[]> => {
   return sortedRepo;
 };
 export const GET = async () => {
-	try{
-		const repos = await fetchApi('https://api.github.com/users/NivDantas/repos');
-		return NextResponse.json(repos);
-	}
-	catch(error){
-		console.error(error);
-		return NextResponse.json({error: error}, {status: 500})
-	}
+  try {
+    const repos = await fetchApi(
+      "https://api.github.com/users/NivDantas/repos"
+    );
+    return NextResponse.json(repos);
+  } catch (error) {
+    console.error(error);
+    return NextResponse.json({ error: error }, { status: 500 });
+  }
 };
-
-export default GET;

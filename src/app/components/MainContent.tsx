@@ -2,11 +2,6 @@ import CardStatic from "@/components/CardStatic";
 import CardExpandable from "@/components/CardExpandable";
 import { useTranslations } from "next-intl";
 import React from "react";
-import TypedComponent from "@/components/Typed";
-
-const typed = (
-  <TypedComponent strings={["Nivaldo Dantas"]} loop={false}></TypedComponent>
-);
 
 interface MainContentProps {
   children?: React.ReactNode;
@@ -16,7 +11,9 @@ const MainContent = ({ children }: MainContentProps) => {
   return (
     <main className="flex justify-center mx-10">
       <div className="max-w-lg xl:max-w-xl flex flex-col justify-center">
-        {typed}
+        <span className="text-site dark:text-white text-2xl lg:text-3xl w-fit mt-5 text-center tracking-wider h-8 self-center justify-self-center cursor-animation animate-typewriter">
+          Nivaldo Dantas
+        </span>
         <h3
           id="dev-title"
           className="text-site-500 dark:text-neutral-500 text-sm lg:text-lg text-center mt-1"
@@ -99,12 +96,12 @@ const MainContent = ({ children }: MainContentProps) => {
           <CardStatic
             title={t("degreeTitle")}
             subtitle={t("degreeSubtitle")}
-            year="2020-2025"
+            year={t("degreeYear")}
           ></CardStatic>
           <CardExpandable
             title={t("continuedTitle")}
             subtitle={t("continuedSubtitle")}
-            year="2021-2024"
+            year={t("continuedYear")}
           >
             <p
               id="ex-paragraph-one"
@@ -123,17 +120,16 @@ const MainContent = ({ children }: MainContentProps) => {
           <CardExpandable
             title={t("internTitle")}
             subtitle={t("internSubtitle")}
-            year="2024-2025"
+            year={t("internYear")}
           >
             <ul
               id="ex-paragraph-two"
               className="text-site-800 dark:text-neutral-300 text-sm xl:text-[16px] text-pretty ml-2 list-disc grid gap-4"
             >
-              <li>{t("internDesc1")}</li>
-              <li>{t("internDesc2")}</li>
-              <li>{t("internDesc3")}</li>
-              <li>{t("internDesc4")}</li>
-              <li>{t("internDesc5")}</li>
+              <p className="text-pretty">{t("internDesc1")}</p>
+              <p>{t("internDesc2")}</p>
+              <p>{t("internDesc3")}</p>
+              <p>{t("internDesc4")}</p>
             </ul>
           </CardExpandable>
           <h2

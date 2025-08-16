@@ -4,13 +4,14 @@ interface SubtitleItem {
 }
 interface Card {
   title: string;
-  subtitle: string | SubtitleItem[];
+  subtitle: string | undefined;
+  languages?: SubtitleItem[] | string;
   year?: string;
   project?: string;
 }
 
-const CardStatic = ({ title, subtitle, year, project }: Card) => {
-  if (year)
+const CardStatic = ({ title, subtitle, year, project, languages }: Card) => {
+  if (year && !project)
     return (
       <div className="border-1 border-site-300 dark:border-detalhe rounded-lg mt-5 group w-full p-4 grid grid-cols-1 relative text-left">
         <h3 className="text-site dark:text-white text-sm lg:text-lg break-normal">
@@ -26,7 +27,7 @@ const CardStatic = ({ title, subtitle, year, project }: Card) => {
       </div>
     );
 
-  if (Array.isArray(subtitle) && project) {
+  if (Array.isArray(languages) && project) {
     return (
       <div className="flex justify-center self-center w-3xl">
         <div className="border-1 border-neutral-300 dark:border-detalhe rounded-lg py-3 px-4 grid grid-cols-1 relative mt-1.5 w-full mb-2 hover:shadow-xl transition-all duration-700">
@@ -36,14 +37,19 @@ const CardStatic = ({ title, subtitle, year, project }: Card) => {
           >
             {title}
           </h3>
+          {subtitle ? (
+            <h4 className="text-site-500 dark:text-neutral-400 text-[10px] lg:text-sm mt-2 font-normal justify-self-start mb-2">
+              {subtitle}
+            </h4>
+          ) : null}
           <div className="mt-2 mb-1">
-            {subtitle.map((s) => {
+            {languages.map((l) => {
               return (
                 <h4
-                  key={s.id}
+                  key={l.id}
                   className="text-site-600 dark:text-neutral-200 text-[10px] lg:text-sm mt-1 mr-2 inline bg-neutral-100 dark:bg-site-800 px-2 py-1 rounded-full border-1 border-neutral-300 dark:border-neutral-900"
                 >
-                  {s.name}
+                  {l.name}
                 </h4>
               );
             })}
@@ -74,11 +80,16 @@ const CardStatic = ({ title, subtitle, year, project }: Card) => {
           >
             {title}
           </h3>
+          {subtitle ? (
+            <h4 className="text-site dark:text-neutral-400 text-[10px] lg:text-sm mt-2 justify-self-start mb-2">
+              {subtitle}
+            </h4>
+          ) : null}
           <h4
             id="lan-subparagraph-one"
             className="text-site-500 dark:text-neutral-400 text-[10px] lg:text-sm mt-1"
           >
-            {subtitle as string}
+            {languages as string}
           </h4>
           <span className="w-full h-0.25 bg-neutral-200 dark:bg-neutral-500 mt-2"></span>
           <p className="text-neutral-500 dark:text-neutral-200 text-[12px] mt-2 font-regular hover:underline">
@@ -108,7 +119,7 @@ const CardStatic = ({ title, subtitle, year, project }: Card) => {
         id="lan-subparagraph-one"
         className="text-site-500 dark:text-neutral-400 text-[10px] lg:text-sm mt-1"
       >
-        {subtitle as string}
+        {subtitle}
       </h4>
     </div>
   );

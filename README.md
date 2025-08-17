@@ -9,9 +9,8 @@ This is my advanced portfolio built with industry-standard tools and best practi
 <div align="center">
 <img src="./public/Phos.gif" alt="Phos">
 </div>
-## 🛠️ Tech Stack
 
-- **Vite** - Modern build tool.
+## 🛠️ Tech Stack
 - **Next.JS 15** - React framework with App Router, SSG/SSR capabilities.
 - **React 19** - Modern component-based architecture with hooks.
 - **TypeScript** - Type-safe development for better code quality and maintainability.

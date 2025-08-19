@@ -99,6 +99,7 @@ const GitRepos = () => {
       />
       <div className="self-center lg:min-h-[696px]">
         {filteredRepos.map((r) => {
+          if (r.name === "nivdantas") return null;
           const topics = getLanguage(r.topics);
           const languages = getLanguage(r.language ?? "");
 

@@ -5,7 +5,7 @@ const NameWrite = () => {
   const { hasPlayed, setHasPlayed } = useNameWrite();
   return (
     <span
-      className={`text-site dark:text-white text-2xl lg:text-3xl w-fit mt-5 text-center tracking-wider h-8 self-center justify-self-center ${
+      className={`text-site dark:text-white text-2xl lg:text-3xl w-fit mt-5 mb-2 text-center tracking-wider h-8 self-center justify-self-center ${
         !hasPlayed ? "cursor-animation animate-typewriter" : ""
       }`}
       onAnimationEnd={() => {

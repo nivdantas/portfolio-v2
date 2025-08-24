@@ -28,7 +28,7 @@ const SearchBar = ({
       <input
         type="text"
         placeholder={placeholder}
-        className="text-neutral-600 dark:text-neutral-50 lg:text-xs bg-transparent border-none outline-none text-[10px]"
+        className="text-neutral-600 dark:text-neutral-50 lg:text-xs bg-transparent border-none outline-none text-[16px] placeholder:text-neutral-400 placeholder:text-xs lg:placeholder:text-[16px] dark:placeholder:text-neutral-200"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />

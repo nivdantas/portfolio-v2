@@ -4,6 +4,7 @@ import { ThemeProvider } from "next-themes";
 import { ReactNode } from "react";
 import "@/globals.css";
 import { ExpandProvider } from "./context/ExpandContext";
+import { NameWriteProvider } from "./context/NameWriteContext";
 const workSans = Work_Sans({
   subsets: ["latin"],
 });
@@ -13,7 +14,9 @@ const RootLayout = ({ children }: { children: ReactNode }) => {
       <body className={`${workSans.className} antialiased`}>
         <ThemeProvider enableSystem={true} defaultTheme="system">
           <RepoProvider>
-            <ExpandProvider>{children}</ExpandProvider>
+            <ExpandProvider>
+              <NameWriteProvider>{children}</NameWriteProvider>
+            </ExpandProvider>
           </RepoProvider>
         </ThemeProvider>
       </body>

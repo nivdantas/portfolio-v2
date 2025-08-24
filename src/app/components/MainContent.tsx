@@ -2,6 +2,7 @@ import CardStatic from "@/components/CardStatic";
 import CardExpandable from "@/components/CardExpandable";
 import { useTranslations } from "next-intl";
 import React from "react";
+import NameWrite from "./NameWrite";
 
 interface MainContentProps {
   children?: React.ReactNode;
@@ -11,9 +12,7 @@ const MainContent = ({ children }: MainContentProps) => {
   return (
     <main className="flex justify-center mx-10">
       <div className="max-w-lg xl:max-w-xl flex flex-col justify-center">
-        <span className="text-site dark:text-white text-2xl lg:text-3xl w-fit mt-5 text-center tracking-wider h-8 self-center justify-self-center cursor-animation animate-typewriter">
-          Nivaldo Dantas
-        </span>
+        <NameWrite />
         <h3
           id="dev-title"
           className="text-site-500 dark:text-neutral-500 text-sm lg:text-lg text-center mt-1"

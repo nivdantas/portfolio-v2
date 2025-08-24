@@ -110,6 +110,7 @@ const MainContent = ({ children }: MainContentProps) => {
             year={t("degreeYear")}
           ></CardStatic>
           <CardExpandable
+            cardId="education"
             title={t("continuedTitle")}
             subtitle={t("continuedSubtitle")}
             year={t("continuedYear")}
@@ -129,6 +130,7 @@ const MainContent = ({ children }: MainContentProps) => {
             {t("experienceTitle")}
           </h2>
           <CardExpandable
+            cardId="internship"
             title={t("internTitle")}
             subtitle={t("internSubtitle")}
             year={t("internYear")}

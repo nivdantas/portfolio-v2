@@ -1,18 +1,19 @@
 "use client";
+import { useExpand } from "@/context/ExpandContext";
 import React, { useState, useId, useEffect } from "react";
 
 interface Card {
+  cardId: string;
   title: string;
   subtitle: string;
   year: string;
   children: React.ReactNode;
 }
 
-const CardExpandable = ({ title, subtitle, year, children }: Card) => {
+const CardExpandable = ({ cardId, title, subtitle, year, children }: Card) => {
   const [isMobile, setIsMobile] = useState(false);
-  const [isExpanded, setIsExpanded] = useState(false);
-  const contentId = useId();
-
+  const { isCardExpanded, setCardExpanded } = useExpand();
+  const isExpanded = isCardExpanded(cardId);
   useEffect(() => {
     const mediaQuery = window.matchMedia("(max-width: 1024px)");
     setIsMobile(mediaQuery.matches);
@@ -29,9 +30,9 @@ const CardExpandable = ({ title, subtitle, year, children }: Card) => {
     return (
       <div className="border-1 border-site-300 dark:border-detalhe rounded-lg mt-5 group">
         <button
-          onClick={() => setIsExpanded(!isExpanded)}
+          onClick={() => setCardExpanded(cardId, !isExpanded)}
           aria-expanded={isExpanded}
-          aria-controls={contentId}
+          aria-controls={cardId}
           className="w-full p-4 grid grid-cols-1 relative text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-site-500 dark:focus-visible:ring-neutral-400 rounded-lg cursor-pointer"
         >
           <h3 className="text-site dark:text-white text-sm lg:text-lg break-normal">
@@ -63,7 +64,7 @@ const CardExpandable = ({ title, subtitle, year, children }: Card) => {
           </svg>
         </button>
         {isExpanded && (
-          <div id={contentId} className="mt-4 p-4 rounded cursor-default">
+          <div id={cardId} className="mt-4 p-4 rounded cursor-default">
             {children}
           </div>
         )}

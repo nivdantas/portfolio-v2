@@ -11,7 +11,7 @@ const Home = async ({ params }: { params: Promise<{ locale: string }> }) => {
     <>
       <Header />
       <MainContent>
-      <GitRepos></GitRepos>
+        <GitRepos></GitRepos>
       </MainContent>
       <Footer />
     </>

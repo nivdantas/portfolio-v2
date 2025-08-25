@@ -5,7 +5,7 @@ const Footer = () => {
     <footer className="grid place-items-center h-full mt-6 mb-4">
       <p
         id="footer-text"
-        className="text-center text-xs text-site dark:text-white h-full"
+        className="text-center text-xs lg:text-[14px] text-site dark:text-white h-full"
       >
         {t("footer")}
       </p>

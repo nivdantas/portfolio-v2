@@ -19,6 +19,7 @@ const ThemeButton = () => {
         setTheme(theme === "light" ? "dark" : "light");
       }}
       aria-label="Toggle between light and dark theme"
+      className="hidden lg:block"
     >
       {theme === "dark" ? (
         <svg

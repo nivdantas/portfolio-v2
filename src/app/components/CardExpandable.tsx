@@ -28,7 +28,7 @@ const CardExpandable = ({ cardId, title, subtitle, year, children }: Card) => {
 
   if (!isMobile)
     return (
-      <div className="border-1 border-site-300 dark:border-detalhe rounded-lg mt-5 group">
+      <div className="border-1 border-site-300 dark:border-detalhe rounded-lg mt-5 group motion-safe:hover:scale-105 transition-transform duration-300">
         <button
           onClick={() => setCardExpanded(cardId, !isExpanded)}
           aria-expanded={isExpanded}
@@ -71,7 +71,7 @@ const CardExpandable = ({ cardId, title, subtitle, year, children }: Card) => {
       </div>
     );
   return (
-    <div className="border-1 border-site-300 dark:border-detalhe rounded-lg mt-5 group w-full p-4 grid grid-cols-1 relative text-left">
+    <div className="border-1 border-site-300 dark:border-detalhe rounded-lg mt-5 group w-full p-4 grid grid-cols-1 relative text-left ">
       <h3 className="text-site dark:text-white text-sm lg:text-lg break-normal">
         {title}
       </h3>

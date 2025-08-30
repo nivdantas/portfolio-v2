@@ -3,7 +3,12 @@ import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { routing } from "@/i18n/routing";
 import { notFound } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
+import { Work_Sans } from "next/font/google";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
+const workSans = Work_Sans({
+  subsets: ["latin"],
+});
 export const metadata: Metadata = {
   title: "Portfolio",
   description: "Nivaldo Dantas - Website",
@@ -25,6 +30,14 @@ const RootLayout = async ({
   }
 
   setRequestLocale(locale);
-  return <NextIntlClientProvider>{children}</NextIntlClientProvider>;
+  return (
+    <html suppressHydrationWarning lang={locale}>
+      <body className={`${workSans.className} antialiased`}>
+        <ThemeProvider enableSystem={true} defaultTheme="system">
+          <NextIntlClientProvider>{children}</NextIntlClientProvider>;
+        </ThemeProvider>
+      </body>
+    </html>
+  );
 };
 export default RootLayout;

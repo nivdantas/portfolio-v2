@@ -34,7 +34,7 @@ const RootLayout = async ({
     <html suppressHydrationWarning lang={locale}>
       <body className={`${workSans.className} antialiased`}>
         <ThemeProvider enableSystem={true} defaultTheme="system">
-          <NextIntlClientProvider>{children}</NextIntlClientProvider>;
+          <NextIntlClientProvider>{children}</NextIntlClientProvider>
         </ThemeProvider>
       </body>
     </html>

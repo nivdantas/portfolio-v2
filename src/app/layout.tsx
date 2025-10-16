@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/next';
 import { RepoProvider } from "@/context/RepoContext";
 import { ReactNode } from "react";
 import "@/globals.css";
@@ -7,7 +8,10 @@ const RootLayout = ({ children }: { children: ReactNode }) => {
   return (
     <RepoProvider>
       <ExpandProvider>
-        <NameWriteProvider>{children}</NameWriteProvider>
+        <NameWriteProvider>
+        {children}
+        <Analytics />
+        </NameWriteProvider>
       </ExpandProvider>
     </RepoProvider>
   );

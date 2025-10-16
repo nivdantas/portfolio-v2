@@ -1,5 +1,5 @@
 {
   "rewrites": [
-    { "source": "/tako/:path*", "destination": "https://tako-streak-production.up.railway.app/tako/:path*" }
+    { "source": "/tako/:path*", "destination": "https://tako-streak-production.up.railway.app/:path*" }
   ]
 }

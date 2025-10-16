@@ -1,3 +1,4 @@
+{
   "rewrites": [
     { "source": "/tako/:path*", "destination": "tako-streak-production.up.railway.app/:path*" }
   ]

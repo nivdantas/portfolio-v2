@@ -42,7 +42,7 @@ const CardStatic = ({ title, subtitle, year, project, languages }: Card) => {
               {subtitle}
             </h4>
           ) : null}
-          <div className="mt-2 mb-1">
+          <div className="flex flex-wrap mt-2 mb-1">
             {languages.map((l) => {
               return (
                 <h4

@@ -1,6 +1,6 @@
 # Portfolio
 
-A sophisticated, performance-optimized portfolio website built with NextJS, React and Tailwwind CSS
+A sophisticated, performance-optimized portfolio website built with NextJS, React and Tailwind CSS
 
 ## About
 

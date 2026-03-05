@@ -1,4 +1,9 @@
 {
+  "Header": {
+    "navAbout": "About",
+    "navProjects": "Projects",
+    "navBlogs": "Blog"
+  },
   "MainContent": {
     "devTitle": "Engenheiro de Software",
     "paragraph": "Olá, me chamo Nivaldo Dantas — engenheiro de software atualmente formado em engenhenharia de software — com sólida base acadêmica e experiência prática.",

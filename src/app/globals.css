@@ -171,6 +171,7 @@
   .hover-underline {
     @apply inline-block relative after:absolute after:w-full after:h-px after:bottom-0 after:left-0 after:bg-site dark:after:bg-white after:transition-transform after:duration-300 after:ease-out after:[transform:scaleX(0)] after:[transform-origin:bottom_right] hover:after:[transform:scaleX(1)] hover:after:[transform-origin:bottom_left];
   }
+
   .cursor-animation {
     position: relative;
     width: 12em;

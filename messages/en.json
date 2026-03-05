@@ -1,4 +1,9 @@
 {
+  "Header": {
+    "navAbout": "About",
+    "navProjects": "Projects",
+    "navBlog": "Blog"
+  },
   "MainContent": {
     "devTitle": "Software Engineer",
     "paragraph": "Hello, my name is Nivaldo Dantas — a software engineer, graduated in Software Engineering — with a strong academic foundation and practical experience.",

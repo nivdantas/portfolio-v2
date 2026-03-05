@@ -1,5 +1,4 @@
 import CardStatic from "@/components/CardStatic";
-import CardExpandable from "@/components/CardExpandable";
 import { useTranslations } from "next-intl";
 import React from "react";
 import NameWrite from "./NameWrite";
@@ -109,42 +108,12 @@ const MainContent = ({ children }: MainContentProps) => {
             subtitle={t("degreeSubtitle")}
             year={t("degreeYear")}
           ></CardStatic>
-          <CardExpandable
-            cardId="education"
-            title={t("continuedTitle")}
-            subtitle={t("continuedSubtitle")}
-            year={t("continuedYear")}
-          >
-            <p
-              id="ex-paragraph-one"
-              className="text-site-800 dark:text-neutral-300 text-sm xl:text-[16px] text-pretty"
-            >
-              {t("continuedDesc")}
-            </p>
-          </CardExpandable>
-
           <h2
             id="title-two"
             className="text-site dark:text-white text-xl xl:text-2xl mt-6"
           >
             {t("experienceTitle")}
           </h2>
-          <CardExpandable
-            cardId="internship"
-            title={t("internTitle")}
-            subtitle={t("internSubtitle")}
-            year={t("internYear")}
-          >
-            <ul
-              id="ex-paragraph-two"
-              className="text-site-800 dark:text-neutral-300 text-sm xl:text-[16px] text-pretty ml-2 list-disc grid gap-4"
-            >
-              <p className="text-pretty">{t("internDesc1")}</p>
-              <p>{t("internDesc2")}</p>
-              <p>{t("internDesc3")}</p>
-              <p>{t("internDesc4")}</p>
-            </ul>
-          </CardExpandable>
           <h2
             id="title-three"
             className="text-site dark:text-white text-xl xl:text-2xl mt-6"

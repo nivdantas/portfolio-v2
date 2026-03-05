@@ -13,31 +13,31 @@ const LanguageButton = () => {
   };
 
   return (
-    <>
+    <div className={`absolute border rounded-3xl w-20 h-7.5 flex items-center justify-center top-2.5 right-2.5`}>
       <button
         id="button-PT"
         aria-label="Change language to Portuguese"
         onClick={() => switchLocale("pt")}
-        className={`text-xs lg:text-sm xl:text-lg text-site-800 dark:text-white hover-underline px-2 py-1 mt-4 ${
+        className={`text-xs lg:text-sm xl:text-lg text-site-800 dark:text-white hover-underline  ${
           locale === "pt" ? "opacity-100" : "opacity-50"
         }`}
       >
         PT
       </button>
-      <span className="self-center text-neutral-500 text-xs lg:text-sm xl:text-lg text-center py-1 mt-4">
-        /
+      <span className="self-center text-neutral-500 text-xs lg:text-sm xl:text-lg text-center mx-1">
+         |
       </span>
       <button
         id="button-en"
         aria-label="Change language to English"
         onClick={() => switchLocale("en")}
-        className={`text-xs lg:text-sm xl:text-lg text-site-800 dark:text-white hover-underline px-2 py-1 mt-4 ${
+        className={`text-xs lg:text-sm xl:text-lg text-site-800 dark:text-white hover-underline ${
           locale === "en" ? "opacity-100" : "opacity-50"
         }`}
       >
         EN
       </button>
-    </>
+    </div>
   );
 };
 

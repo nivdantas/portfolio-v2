@@ -1,13 +1,14 @@
 {
   "Header": {
-    "navAbout": "About",
-    "navProjects": "Projects",
-    "navBlogs": "Blog"
+    "navAbout": "Sobre",
+    "navProjects": "Projetos",
+    "navBlog": "Blog"
   },
   "MainContent": {
-    "devTitle": "Engenheiro de Software",
     "paragraph": "Olá, me chamo Nivaldo Dantas — engenheiro de software atualmente formado em engenhenharia de software — com sólida base acadêmica e experiência prática.",
     "educationTitle": "Educação",
+    "educationMobile": "<b> Bacharelado em Engenharia de Software </b> no Instituto Federal do Amazonas",
+    "papeTitle": "<b> Bolsista do Programa PAPE </b> pelo Aranouá <b>(Samsung)</b>",
     "degreeTitle": "Bacharelado em Engenharia de Software",
     "degreeSubtitle": "Instituto Federal do Amazonas - IFAM",
     "degreeYear": "Jan. 2020 - Jan. 2025",
@@ -16,6 +17,7 @@
     "continuedYear": "Jan. 2021 - Dez. 2023",
     "continuedDesc": "Atividade extracurricular em parceria do IFAM com a Samsung com finalidade de capacitar, aperfeiçoar e atualizar o estudante, garantindo a constante modernização das competências e atualizar saberes com foco no desempenho, aprimoramento focado em cursos de React, React Native, Programação para Dispositivos Móveis, Banco de Dados, entre outros, com projetos reais.",
     "experienceTitle": "Experiência",
+    "experienceMobile": "<b> Estagiário em Engenharia de Software </b> no Tribunal de Contas do Amazonas",
     "internTitle": "Estagiário",
     "internSubtitle": "Tribunal de Contas do Amazonas - TCE/AM",
     "internYear": "Jan. 2024 - Mai. 2025",

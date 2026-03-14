@@ -6,6 +6,8 @@
 }
 
 :root {
+  --font-asap: "Asap", sans-serif;
+  --font-fira-sans: "Fira Sans", sans-serif;
   --clr-1: #e2eaec;
   --clr-2: #b5d5df;
   --clr-3: #bbcdd3;
@@ -14,25 +16,32 @@
   --clr-light-2: #4b727c;
   --clr-light-3: #536164;
   --clr-light-4: #223b41;
+  --stroke-from: var(--color-site-600);
+  --stroke-to: var(--color-site-100);
 }
-@theme inline {
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-  --color-site: #121717;
-  --color-site-800: #1d2323;
-  --color-site-700: #282f2f;
-  --color-site-600: #464d4d;
-  --color-site-500: #646a6a;
-  --color-site-300: #9ea0a0;
-  --color-detalhe: #364545;
-}
+
 :root[data-theme="light"] {
-  background-color: white;
+  background-color: #EAEAEA;
+  --stroke-from: var(--color-site-800);
+  --stroke-to: var(--color-site-100);
 }
 
 :root[data-theme="dark"] {
-  background-color: #121717;
+  background-color: #202020;
+  --stroke-from: var(--color-site-100);
+  --stroke-to: var(--color-site-800);
 }
+@theme inline {
+  --color-site: #121717;
+  --color-site-800: #202020;
+  --color-site-700: #282f2f;
+  --color-site-600: #464646;
+  --color-site-500: #646a6a;
+  --color-site-300: #9ea0a0;
+  --color-site-100: #EAEAEA;
+  --color-detalhe: #364545;
+}
+
 @theme {
   --animate-glowing: glowing 20s linear infinite;
   --animate-stroke: stroke 2s infinite;
@@ -48,6 +57,24 @@
     }
   }
   @keyframes blinkingCursor {
+    from {
+      border-right-color: rgba(0, 0, 0, 0.75);
+    }
+    to {
+      border-right-color: transparent;
+    }
+  }
+
+  @keyframes frost-1 {
+    from {
+      top: 0;
+    }
+    to {
+      top: 14ch;
+    }
+  }
+
+  @keyframes frost-2 {
     from {
       border-right-color: rgba(0, 0, 0, 0.75);
     }
@@ -168,6 +195,33 @@
 }
 
 @layer components {
+  .stroke-gradient {
+    position: relative;
+    width: 100px;
+    height: 35px;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+  }
+
+  .stroke-gradient::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    padding: 1px;
+    background: linear-gradient(to right, var(--stroke-from) 0%, var(--stroke-to) 40%);
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
   .hover-underline {
     @apply inline-block relative after:absolute after:w-full after:h-px after:bottom-0 after:left-0 after:bg-site dark:after:bg-white after:transition-transform after:duration-300 after:ease-out after:[transform:scaleX(0)] after:[transform-origin:bottom_right] hover:after:[transform:scaleX(1)] hover:after:[transform-origin:bottom_left];
   }

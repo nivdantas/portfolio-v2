@@ -3,12 +3,21 @@ import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { routing } from "@/i18n/routing";
 import { notFound } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
-import { Work_Sans } from "next/font/google";
+import { Asap, Fira_Sans } from "next/font/google";
 import { ThemeProvider } from "@/components/ThemeProvider";
 
-const workSans = Work_Sans({
+const asap = Asap({
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-asap",
 });
+
+const firSans = Fira_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-fira-sans",
+});
+
 export const metadata: Metadata = {
   title: "Portfolio",
   description: "Nivaldo Dantas - Website",
@@ -32,7 +41,9 @@ const RootLayout = async ({
   setRequestLocale(locale);
   return (
     <html suppressHydrationWarning lang={locale}>
-      <body className={`${workSans.className} antialiased`}>
+      <body
+        className={`${asap.variable} ${firSans.variable} ${asap.className} antialiased`}
+      >
         <ThemeProvider enableSystem={true} defaultTheme="system">
           <NextIntlClientProvider>{children}</NextIntlClientProvider>
         </ThemeProvider>

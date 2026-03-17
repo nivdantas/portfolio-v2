@@ -15,7 +15,7 @@ const Header = () => {
                 </ul>
             </nav>
             <h1 className="font-archivo font-black text-4xl tracking-tight text-center mt-10 leading-9">{t.rich("devTitle", {
-                br: (chunks: React.ReactNode) => <br />,
+                br: () => <br />,
             })}</h1>
             <nav className="mt-12.5 mb-12">
                 <ul className="flex gap-22">

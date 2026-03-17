@@ -1,35 +1,24 @@
 {
   "Header": {
+    "devTitle": "Engenheiro <br></br>de <br></br>Software",
     "navAbout": "Sobre",
     "navProjects": "Projetos",
     "navBlog": "Blog"
   },
   "MainContent": {
-    "paragraph": "Olá, me chamo Nivaldo Dantas — engenheiro de software atualmente formado em engenhenharia de software — com sólida base acadêmica e experiência prática.",
-    "educationTitle": "Educação",
-    "educationMobile": "<b> Bacharelado em Engenharia de Software </b> no Instituto Federal do Amazonas",
-    "papeTitle": "<b> Bolsista do Programa PAPE </b> pelo Aranouá <b>(Samsung)</b>",
-    "degreeTitle": "Bacharelado em Engenharia de Software",
-    "degreeSubtitle": "Instituto Federal do Amazonas - IFAM",
-    "degreeYear": "Jan. 2020 - Jan. 2025",
-    "continuedTitle": "Formação Continuada",
-    "continuedSubtitle": "Projeto Aranouá - Instituto Federal do Amazonas",
-    "continuedYear": "Jan. 2021 - Dez. 2023",
-    "continuedDesc": "Atividade extracurricular em parceria do IFAM com a Samsung com finalidade de capacitar, aperfeiçoar e atualizar o estudante, garantindo a constante modernização das competências e atualizar saberes com foco no desempenho, aprimoramento focado em cursos de React, React Native, Programação para Dispositivos Móveis, Banco de Dados, entre outros, com projetos reais.",
     "experienceTitle": "Experiência",
-    "experienceMobile": "<b> Estagiário em Engenharia de Software </b> no Tribunal de Contas do Amazonas",
-    "internTitle": "Estagiário",
-    "internSubtitle": "Tribunal de Contas do Amazonas - TCE/AM",
-    "internYear": "Jan. 2024 - Mai. 2025",
-    "internDesc1": "Desenvolvimento de aplicação web informativa sobre governança de TI, utilizando tecnologias como React, NestJS, TypeScript, SQLite, Docker e Prisma, que capacitou o setor para receber formulários de seus supervisionados.",
-    "internDesc2": "Desenvolvimento de questionários para avaliação anual da Lei Geral de Proteção de Dados (LGPD) utilizando a plataforma LimeSurvey, com scripts JavaScript, o que possibilitou a coleta de dados de 70% dos órgãos do estado do Amazonas.",
-    "internDesc3": "Implementação de automações para otimizar fluxos de trabalho e reduzir tarefas manuais, utilizando scripts com a linguagem Python, por meio da biblioteca Selenium, houve a automação de processos repetitivos feitos nos principais portais do TCE/AM.",
-    "internDesc4": "Utilização de ferramentas de Kanban para organização, por meio do site Trello, realçando o acompanhamento e priorização das tarefas, ademais, houve realização de reuniões semanais para brainstorming e planejamento de requisitos",
-    "languagesTitle": "Idiomas",
-    "portuguese": "Português",
-    "portugueseLevel": "Nativo",
-    "english": "Inglês",
-    "englishLevel": "Avançado (C1)"
+    "experienceSubTitle": "Um resumo anual de minha experiência profissional",
+    "experienceMobileTitle": "Estagiário em Engenharia de Software no Tribunal de Contas do Amazonas",
+    "experienceMobileParagraph": "Desenvolvi aplicações de ponta a ponta, participei da avaliação anual da LGPD, automatizei processos e apliquei ferramentas de metodologia ágil para organização setorial.",
+    "experienceMobileParagraph2": "Desenvolvi overlays de stream, API para feedback contínuo de métricas de transmissões para clientes. Criei o chatbot Bolota, automatizando com o modelo Gemini.",
+    "educationTitle": "Educação",
+    "educationSubTitle": "Um pouco sobre minha educação",
+    "educationMobileTitle": "Bacharelado em Engenharia de Software no Instituto Federal do Amazonas",
+    "educationMobileParagraph": "Sou formado em Engenharia de Software pelo IFAM, possuindo sólida base acadêmica, com média major GPA de 9 Disciplinas relevantes: AED, Programação Orientada a Objetos, Arquitetura, WEB, Mobile, Garantia de Qualidade.",
+    "papeTitle": "Bolsista do Programa PAPE pelo Aranouá (Samsung)",
+    "papeParagraph": "Fui selecionado para o programa de êxito do estudante em reconhecimento ao alto desempenho acadêmico, me tornando um bolsista remunerado. Mantive alto desempenho enquanto completava projetos e treinamento técnico avançado. ",
+    "portfolioSubTitle": "Explore meus projetos",
+    "blogSubTitle": "Leia meus afazeres e novas ideias"
   },
   "Footer": {
     "footer": "© 2025 Nivaldo Dantas. Todos os direitos reservados."

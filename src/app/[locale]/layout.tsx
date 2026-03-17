@@ -1,21 +1,24 @@
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
+
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { routing } from "@/i18n/routing";
 import { notFound } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
-import { Asap, Fira_Sans } from "next/font/google";
+import { Archivo, Poppins } from "next/font/google";
 import { ThemeProvider } from "@/components/ThemeProvider";
 
-const asap = Asap({
+
+const archivo = Archivo({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800", "900"],
-  variable: "--font-asap",
+  variable: "--font-archivo",
 });
 
-const firSans = Fira_Sans({
+const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
-  variable: "--font-fira-sans",
+  variable: "--font-poppins",
 });
 
 export const metadata: Metadata = {
@@ -30,7 +33,7 @@ const RootLayout = async ({
   children,
   params,
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
   params: Promise<{ locale: string }>;
 }>) => {
   const { locale } = await params;
@@ -42,7 +45,7 @@ const RootLayout = async ({
   return (
     <html suppressHydrationWarning lang={locale}>
       <body
-        className={`${asap.variable} ${firSans.variable} ${asap.className} antialiased`}
+        className={`${archivo.variable} ${poppins.variable} antialiased`}
       >
         <ThemeProvider enableSystem={true} defaultTheme="system">
           <NextIntlClientProvider>{children}</NextIntlClientProvider>

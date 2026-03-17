@@ -6,8 +6,6 @@
 }
 
 :root {
-  --font-asap: "Asap", sans-serif;
-  --font-fira-sans: "Fira Sans", sans-serif;
   --clr-1: #e2eaec;
   --clr-2: #b5d5df;
   --clr-3: #bbcdd3;
@@ -32,6 +30,8 @@
   --stroke-to: var(--color-site-800);
 }
 @theme inline {
+  --font-archivo: var(--font-archivo);
+  --font-poppins: var(--font-poppins);
   --color-site: #121717;
   --color-site-800: #202020;
   --color-site-700: #282f2f;

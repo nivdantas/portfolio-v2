@@ -4,30 +4,31 @@ import {useTranslations} from "next-intl";
 const Header = () => {
     const t = useTranslations("Header");
     return (
-        <header className="grid grid-cols-1 justify-items-center mt-4 md:sticky z-50 top-0 text-site-800 dark:text-site-100">
-            <Image src={"n.svg"} alt={"N logo"} width={60} height={60} className="dark:invert"></Image>
+        <header className="grid grid-cols-1 justify-items-center mt-4 z-50 text-site-800 dark:text-site-100 md:h-dvh">
+            <Image src={"n.svg"} alt={"N logo"} width={60} height={60} className="dark:invert md:absolute md:left-10"></Image>
             <LanguageButton/>
-            <nav className="mx-10 mt-7.5">
+            <nav className="mx-10 mt-7.5 md:mt-4">
                 <ul className="flex gap-15 font-poppins">
                     <li>{t("navAbout")}</li>
                     <li>{t("navProjects")}</li>
                     <li>{t("navBlog")}</li>
                 </ul>
             </nav>
-            <h1 className="font-archivo font-black text-4xl tracking-tight text-center mt-10 leading-9">{t.rich("devTitle", {
+            <h1 className="font-archivo font-black md:text-7xl text-4xl tracking-tight md:tracking-normal text-center mt-10 md:mt-14 leading-9 md:leading-26">{t.rich("devTitle", {
                 br: () => <br />,
             })}</h1>
-            <nav className="mt-12.5 mb-12">
-                <ul className="flex gap-22">
+            <p className="hidden md:block md:mt-0 font-poppins text-xl leading-9 max-w-[50%] text-center">{t("devDesc")}</p>
+            <nav className="mt-12.5 mb-12 md:mb-0 md:h-min md:mt-4">
+                <ul className="flex gap-22 md:gap-11">
                     <li><a href="https://github.com/NivDantas">
-                        <Image src={"github.svg"} alt={"Github logo"} width={40} height={40} className="dark:invert"></Image>
-                    </a></li>
-                    <li><a href="mailto:nivdantas@icloud.com">
-                        <Image src={"envelope.svg"} alt={"Email logo"} width={40} height={40} className="dark:invert"></Image>
-                    </a></li>
-                    <li><a href="https://linkedin.com/in/nivaldo-dantas">
-                        <Image src={"linkedin.svg"} alt={"Linkedin logo"} width={40} height={40} className="dark:invert"></Image>
-                    </a></li>
+                            <Image src={"github.svg"} alt={"Github logo"} width={50} height={50} className="dark:invert w-10 h-10 md:w-[50px] md:h-[50px]"></Image>
+                        </a></li>
+                        <li><a href="mailto:nivdantas@icloud.com">
+                            <Image src={"envelope.svg"} alt={"Email logo"} width={50} height={50} className="dark:invert w-10 h-10 md:w-[50px] md:h-[50px]"></Image>
+                        </a></li>
+                        <li><a href="https://linkedin.com/in/nivaldo-dantas">
+                            <Image src={"linkedin.svg"} alt={"Linkedin logo"} width={50} height={50} className="dark:invert w-10 h-10 md:w-[50px] md:h-[50px]"></Image>
+                        </a></li>
                 </ul>
             </nav>
         </header>

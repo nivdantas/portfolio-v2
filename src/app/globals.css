@@ -34,10 +34,11 @@
   --font-poppins: var(--font-poppins);
   --color-site: #121717;
   --color-site-800: #202020;
-  --color-site-700: #282f2f;
+  --color-site-700: #555555;
   --color-site-600: #464646;
   --color-site-500: #646a6a;
   --color-site-300: #9ea0a0;
+  --color-site-200: #c4c4c4;
   --color-site-100: #EAEAEA;
   --color-detalhe: #364545;
 }

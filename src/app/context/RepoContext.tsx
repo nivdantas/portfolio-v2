@@ -7,15 +7,7 @@ import {
   useState,
 } from "react";
 
-export interface GitAPI {
-  id: number;
-  name: string;
-  created_at: string;
-  language: string | null;
-  description: string | null;
-  topics: string[];
-  html_url: string;
-}
+import type { GitAPI } from "@/api/repos/route";
 
 interface RepoContextType {
   repos: GitAPI[] | null;

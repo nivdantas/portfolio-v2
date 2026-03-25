@@ -1,6 +1,6 @@
 import {useTranslations} from "next-intl";
 import React from "react";
-import ScrollReveal from "./ScrollReveal";
+import ScrollReveal from "../ui/ScrollReveal";
 
 interface MainContentProps {
     children?: React.ReactNode;
@@ -58,13 +58,8 @@ const MainContent = ({children}: MainContentProps) => {
                     <section className="mt-10 md:mt-25">
                         <h1 className="font-poppins font-medium text-[9px] md:text-base">Portfolio</h1>
                         <h2 className="font-poppins text-xs max-w-[24ch] mt-2.5 md:text-lg">{t("portfolioSubTitle")}</h2>
-                        <article className="md:flex md:flex-wrap md:gap-4">
-                        <div id="PLACEHOLDER" className="w-[295px] h-[94px] md:w-[320px] md:h-[240px] bg-gray-500 mt-4 md:mt-5 rounded-[10px]"></div>
-                        <div id="PLACEHOLDER" className="w-[295px] h-[94px] md:w-[320px] md:h-[240px] bg-gray-500 mt-5 rounded-[10px]"></div>
-                        <div id="PLACEHOLDER" className="w-[295px] h-[94px] md:w-[320px] md:h-[240px] bg-gray-500 mt-5 rounded-[10px]"></div>
-                        <div id="PLACEHOLDER" className="hidden md:block w-[320px] h-[240px] bg-gray-500 mt-5 rounded-[10px]"></div>
-                        <div id="PLACEHOLDER" className="hidden md:block w-[320px] h-[240px] bg-gray-500 mt-5 rounded-[10px]"></div>
-                        <div id="PLACEHOLDER" className="hidden md:block w-[320px] h-[240px] bg-gray-500 mt-5 rounded-[10px]"></div>
+                        <article className="md:flex md:flex-wrap md:gap-4 mt-4">
+                                {children}
                         </article>
                     </section>
                 </ScrollReveal>

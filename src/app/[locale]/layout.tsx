@@ -6,7 +6,7 @@ import { routing } from "@/i18n/routing";
 import { notFound } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
 import { Archivo, Poppins } from "next/font/google";
-import { ThemeProvider } from "@/components/ThemeProvider";
+import { ThemeProvider } from "@/components/ui/ThemeProvider";
 
 
 const archivo = Archivo({

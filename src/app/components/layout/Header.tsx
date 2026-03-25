@@ -1,4 +1,4 @@
-import LanguageButton from "./LanguageButton";
+import LanguageButton from "../ui/LanguageButton";
 import Image from 'next/image'
 import {useTranslations} from "next-intl";
 const Header = () => {

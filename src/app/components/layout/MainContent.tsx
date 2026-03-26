@@ -3,10 +3,11 @@ import React from "react";
 import ScrollReveal from "../ui/ScrollReveal";
 
 interface MainContentProps {
-    children?: React.ReactNode;
+    portfolioContent?: React.ReactNode;
+    blogContent?: React.ReactNode;
 }
 
-const MainContent = ({children}: MainContentProps) => {
+const MainContent = ({portfolioContent, blogContent}: MainContentProps) => {
     const t = useTranslations("MainContent");
     return (
         <main className="flex justify-center ml-10 md:ml-30 md:mt-10 text-site-800 dark:text-site-100">
@@ -59,7 +60,7 @@ const MainContent = ({children}: MainContentProps) => {
                         <h1 className="font-poppins font-medium text-[9px] md:text-base">Portfolio</h1>
                         <h2 className="font-poppins text-xs max-w-[24ch] mt-2.5 md:text-lg">{t("portfolioSubTitle")}</h2>
                         <article className="md:flex md:flex-wrap md:gap-4 mt-4">
-                                {children}
+                                {portfolioContent}
                         </article>
                     </section>
                 </ScrollReveal>
@@ -68,32 +69,7 @@ const MainContent = ({children}: MainContentProps) => {
                     <section className="mt-10 md:mt-25">
                         <h1 className="font-poppins font-medium text-[9px] md:text-base">Blogspot</h1>
                         <h2 className="font-poppins text-xs max-w-[24ch] mt-2.5 md:text-lg">{t("blogSubTitle")}</h2>
-                        <article className="md:grid md:grid-cols-[1fr_1fr] md:gap-4">
-                        <div id="PLACEHOLDER"
-                                 className="w-[288px] h-[156px] md:w-[692px] md:h-[375px] bg-gray-800 mt-3 rounded-2xl">
-                        </div>
-                        <div className="hidden md:flex flex-col gap-2 justify-center">
-                            <h1 className="font-poppins text-[8px] md:text-xl">Title</h1>
-                            <h2 className="font-poppins text-[8px] md:text-xl">Niv - Data</h2>
-                        </div>
-                        </article>
-                        <article id="PLACEHOLDER" className="grid grid-cols-[1fr_4fr] md:grid-cols-[175px_1fr] mt-7 gap-3 md:gap-8">
-                            <div id="PLACEHOLDER" className="w-[73px] md:w-[175px] h-[53px] md:h-[125px] bg-gray-800 rounded-md"></div>
-                            <div className="flex flex-col gap-2 justify-center">
-                                <h1 className="font-poppins text-[8px] md:text-base">Title</h1>
-                                <h2 className="font-poppins text-[8px] md:text-base">Niv - Data</h2>
-                            </div>
-                            <div id="PLACEHOLDER" className="hidden md:block w-[73px] md:w-[175px] h-[53px] md:h-[125px] bg-gray-800 rounded-md"></div>
-                            <div className="hidden md:flex flex-col gap-2 justify-center">
-                                <h1 className="font-poppins text-[8px] md:text-base">Title</h1>
-                                <h2 className="font-poppins text-[8px] md:text-base">Niv - Data</h2>
-                            </div>
-                            <div id="PLACEHOLDER" className="hidden md:block w-[73px] md:w-[175px] h-[53px] md:h-[125px] bg-gray-800 rounded-md"></div>
-                            <div className="hidden md:flex flex-col gap-2 justify-center">
-                                <h1 className="font-poppins text-[8px] md:text-base">Title</h1>
-                                <h2 className="font-poppins text-[8px] md:text-base">Niv - Data</h2>
-                            </div>
-                        </article>
+                        {blogContent}
                     </section>
                 </ScrollReveal>
             </div>

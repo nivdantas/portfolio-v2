@@ -16,7 +16,8 @@ export const GET = async () => {
     });
 
     if (!res.ok) {
-      throw new Error(`Failed to fetch posts: ${res.status}`);
+      console.error(`Failed to fetch posts: ${res.status}`);
+      return;
     }
 
     const posts: BlogPost[] = await res.json();

@@ -2,8 +2,7 @@
 "use client";
 
 import { useBlog } from "@/context/BlogContext";
-import { useTranslations } from "next-intl";
-
+import { Link } from "@/i18n/navigation"
 const formatDate = (dateStr: string) => {
     const date = new Date(dateStr);
     return date.toLocaleDateString("en-US", {
@@ -15,7 +14,6 @@ const formatDate = (dateStr: string) => {
 
 const BlogPosts = () => {
     const { posts, isLoading, error } = useBlog();
-    const t = useTranslations("MainContent");
 
     // --- Loading skeleton ---
     if (isLoading) {
@@ -67,7 +65,7 @@ const BlogPosts = () => {
         <>
             {/* Featured post (large) */}
             <article className="md:grid md:grid-cols-[1fr_1fr] md:gap-4">
-                <a href={`/blog/${featured.slug}`} className="block">
+                <Link href={`/blog/${featured.slug}`} className="block">
                     <div
                         className="w-[288px] h-[156px] md:w-[692px] md:h-[375px] bg-gray-800 mt-3 rounded-2xl overflow-hidden bg-cover bg-center"
                         style={
@@ -76,7 +74,7 @@ const BlogPosts = () => {
                                 : undefined
                         }
                     />
-                </a>
+                </Link>
                 <div className="hidden md:flex flex-col gap-2 justify-center">
                     <h1 className="font-poppins text-[8px] md:text-xl">{featured.title}</h1>
                     <h2 className="font-poppins text-[8px] md:text-xl text-site-700 dark:text-site-200">

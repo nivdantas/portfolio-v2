@@ -1,5 +1,6 @@
-import { setRequestLocale } from "next-intl/server";
+import {setRequestLocale} from "next-intl/server";
 import Footer from "@/components/layout/Footer";
+import ReactMarkdown from 'react-markdown';
 
 interface BlogPost {
     id: number;
@@ -23,7 +24,7 @@ const fetchPost = async (slug: string): Promise<BlogPost | null> => {
     try {
         // Fetch from your API — adjust the URL to your portfolio-api endpoint
         const res = await fetch(`${process.env.BLOG_API_URL}/posts/${slug}`, {
-            next: { revalidate: 60 * 60 },
+            next: {revalidate: 60 * 60},
         });
         if (!res.ok) return null;
         return res.json();
@@ -33,11 +34,11 @@ const fetchPost = async (slug: string): Promise<BlogPost | null> => {
 };
 
 const BlogPostPage = async ({
-    params,
-}: {
+                                params,
+                            }: {
     params: Promise<{ locale: string; slug: string }>;
 }) => {
-    const { locale, slug } = await params;
+    const {locale, slug} = await params;
     setRequestLocale(locale);
 
     const post = await fetchPost(slug);
@@ -56,12 +57,6 @@ const BlogPostPage = async ({
         <>
             <main className="flex justify-center ml-10 md:ml-30 md:mt-10 text-site-800 dark:text-site-100">
                 <article className="max-w-3xl w-full">
-                    {post.imageUrl && (
-                        <div
-                            className="w-full h-[200px] md:h-[400px] bg-gray-800 rounded-2xl overflow-hidden bg-cover bg-center"
-                            style={{ backgroundImage: `url(${post.imageUrl})` }}
-                        />
-                    )}
                     <h1 className="font-archivo font-black text-3xl md:text-5xl mt-8">
                         {post.title}
                     </h1>
@@ -70,11 +65,12 @@ const BlogPostPage = async ({
                     </p>
                     <div
                         className="font-poppins mt-8 prose dark:prose-invert max-w-none"
-                        dangerouslySetInnerHTML={{ __html: post.content }}
-                    />
+                    >
+                        <ReactMarkdown>{post.content}</ReactMarkdown>
+                    </div>
                 </article>
             </main>
-            <Footer />
+            <Footer/>
         </>
     );
 };

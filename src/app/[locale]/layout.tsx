@@ -1,7 +1,7 @@
+import "@/globals.css";
 import type {Metadata} from "next";
 import type {ReactNode} from "react";
 import {Analytics} from '@vercel/analytics/next';
-import "@/globals.css";
 
 import {hasLocale, NextIntlClientProvider} from "next-intl";
 import {routing} from "@/i18n/routing";
@@ -30,6 +30,8 @@ export const metadata: Metadata = {
     title: "Portfolio",
     description: "Nivaldo Dantas - Website",
 };
+
+
 
 export const generateStaticParams = () => {
     return routing.locales.map((locale) => ({locale}));

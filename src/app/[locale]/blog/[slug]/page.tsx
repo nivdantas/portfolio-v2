@@ -1,5 +1,4 @@
 import { setRequestLocale } from "next-intl/server";
-import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
 interface BlogPost {
@@ -46,11 +45,9 @@ const BlogPostPage = async ({
     if (!post) {
         return (
             <>
-                <Header />
                 <main className="flex justify-center mt-20 text-site-800 dark:text-site-100">
                     <h1 className="font-poppins text-2xl">Post not found</h1>
                 </main>
-                <Footer />
             </>
         );
     }

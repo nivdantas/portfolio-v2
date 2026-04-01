@@ -8,7 +8,7 @@ const Header = () => {
             <Image src={"n.svg"} alt={"N logo"} width={60} height={60} className="dark:invert md:absolute md:left-10"></Image>
             <LanguageButton/>
             <nav className="mx-10 mt-7.5 md:mt-4">
-                <ul className="flex gap-15 font-poppins">
+                <ul className="flex gap-15 font-poppins xl:text-2xl">
                     <li>{t("navAbout")}</li>
                     <li>{t("navProjects")}</li>
                     <li>{t("navBlog")}</li>
@@ -17,7 +17,7 @@ const Header = () => {
             <h1 className="font-archivo font-black md:text-7xl text-4xl tracking-tight md:tracking-normal text-center mt-10 md:mt-14 leading-9 md:leading-26">{t.rich("devTitle", {
                 br: () => <br />,
             })}</h1>
-            <p className="hidden md:block md:mt-0 font-poppins text-xl leading-9 max-w-[50%] text-center">{t("devDesc")}</p>
+            <p className="hidden md:block md:mt-0 font-poppins text-xl leading-9 max-w-[50%] text-center xl:text-3xl">{t("devDesc")}</p>
             <nav className="mt-12.5 mb-12 md:mb-0 md:h-min md:mt-4">
                 <ul className="flex gap-22 md:gap-11">
                     <li><a href="https://github.com/NivDantas">

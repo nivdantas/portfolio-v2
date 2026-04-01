@@ -19,7 +19,7 @@ const BlogPosts = () => {
     if (isLoading) {
         return (
             <>
-                <article className="md:grid md:grid-cols-[1fr_1fr] md:gap-4">
+                <article className="md:grid md:grid-cols-[692px_1fr] md:gap-4">
                     <div className="w-[288px] h-[156px] md:w-[692px] md:h-[375px] bg-gray-800 animate-pulse mt-3 rounded-2xl" />
                     <div className="hidden md:flex flex-col gap-2 justify-center">
                         <div className="h-6 w-48 bg-gray-700 animate-pulse rounded" />
@@ -64,10 +64,10 @@ const BlogPosts = () => {
     return (
         <>
             {/* Featured post (large) */}
-            <article className="md:grid md:grid-cols-[1fr_1fr] md:gap-4">
+            <article className="md:grid md:grid-cols-[692px_1fr] xl:grid-cols-[800px_1fr] md:gap-4">
                 <Link href={`/blog/${featured.slug}`} className="block">
                     <div
-                        className="w-[288px] h-[156px] md:w-[692px] md:h-[375px] bg-gray-800 mt-3 rounded-2xl overflow-hidden bg-cover bg-center"
+                        className="w-[288px] h-[156px] md:w-[692px] md:h-[375px] xl:w-[800px] xl:h-[450px] bg-gray-800 mt-3 rounded-2xl overflow-hidden bg-cover bg-center"
                         style={
                             featured.imageUrl
                                 ? { backgroundImage: `url(${featured.imageUrl})` }
@@ -76,8 +76,8 @@ const BlogPosts = () => {
                     />
                 </Link>
                 <div className="hidden md:flex flex-col gap-2 justify-center">
-                    <h1 className="font-poppins text-[8px] md:text-xl">{featured.title}</h1>
-                    <h2 className="font-poppins text-[8px] md:text-xl text-site-700 dark:text-site-200">
+                    <h1 className="font-poppins text-[8px] md:text-xl xl:text-3xl">{featured.title}</h1>
+                    <h2 className="font-poppins text-[8px] md:text-xl xl:text-2xl text-site-700 dark:text-site-200">
                         Niv - {formatDate(featured.createdAt)}
                     </h2>
                 </div>
@@ -89,7 +89,7 @@ const BlogPosts = () => {
                     <div key={post.id} className={`contents ${i > 0 ? "hidden md:contents" : ""}`}>
                         <a href={`/blog/${post.slug}`} className="block">
                             <div
-                                className="w-[73px] md:w-[175px] h-[53px] md:h-[125px] bg-gray-800 rounded-md overflow-hidden bg-cover bg-center"
+                                className="w-[73px] md:w-[175px] h-[53px] md:h-[125px] xl:w-[350px] xl:h-[220px] bg-gray-800 rounded-md overflow-hidden bg-cover bg-center"
                                 style={
                                     post.imageUrl
                                         ? { backgroundImage: `url(${post.imageUrl})` }
@@ -112,8 +112,8 @@ const BlogPosts = () => {
                     return (
                         <div key={`empty-${idx}`} className={`contents ${idx > 0 ? "hidden md:contents" : ""}`}>
                             <div className="w-[73px] md:w-[175px] h-[53px] md:h-[125px] bg-gray-800 rounded-md" />
-                            <div className={`flex flex-col gap-2 justify-center ${idx > 0 ? "hidden md:flex" : ""}`}>
-                                <h1 className="font-poppins text-[8px] md:text-base">Coming soon</h1>
+                            <div className={`flex flex-col w-fit gap-2 justify-center ${idx > 0 ? "hidden md:flex" : ""}`}>
+                                <h1 className="font-poppins text-[8px] md:text-base xl:text-xl">Coming soon</h1>
                             </div>
                         </div>
                     );

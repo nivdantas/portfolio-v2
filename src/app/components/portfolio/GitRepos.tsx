@@ -75,7 +75,7 @@ const GitRepos = () => {
             rel="noopener noreferrer"
             aria-label={`Project: ${r.name}`}
             style={r.openGraphImageUrl ? { backgroundImage: `url(${r.openGraphImageUrl})`, backgroundSize: "cover", backgroundPosition: "center", } : undefined}
-            className={`group relative w-[295px] h-[94px] md:w-[320px] md:h-[240px] bg-site-800 dark:bg-site-600 rounded-[10px] overflow-hidden flex flex-col justify-end p-4 hover:shadow-xl transition-all duration-500 ${
+            className={`group relative w-[295px] h-[94px] md:min-w-[300px] lg:min-w-[380px] xl:min-w-[400px] 2xl:min-w-[500px] 2xl:min-h-[320px] md:even:justify-self-end xl:even:justify-self-auto md:h-[240px] bg-site-800 dark:bg-site-600 rounded-[10px] overflow-hidden flex flex-col justify-end p-4 hover:shadow-xl transition-all duration-500 ${
               i >= 3 ? "hidden md:flex" : ""
             } ${i > 0 ? "mt-5 md:mt-0" : ""}`}
           >

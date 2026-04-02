@@ -10,7 +10,6 @@ import {setRequestLocale} from "next-intl/server";
 import {Archivo, Poppins} from "next/font/google";
 import {ThemeProvider} from "@/components/ui/ThemeProvider";
 import {BlogProvider} from "@/context/BlogContext";
-import {ExpandProvider} from "@/context/ExpandContext";
 import {RepoProvider} from "@/context/RepoContext";
 
 
@@ -58,10 +57,8 @@ const RootLayout = async ({
         <ThemeProvider enableSystem={true} defaultTheme="system">
             <RepoProvider>
                 <BlogProvider>
-                    <ExpandProvider>
                             <NextIntlClientProvider>{children}</NextIntlClientProvider>
                             <Analytics/>
-                    </ExpandProvider>
                 </BlogProvider>
             </RepoProvider>
         </ThemeProvider>

@@ -18,6 +18,10 @@
   --stroke-to: var(--color-site-100);
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 :root[data-theme="light"] {
   background-color: #EAEAEA;
   --stroke-from: var(--color-site-800);

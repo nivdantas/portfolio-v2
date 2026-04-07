@@ -10,7 +10,7 @@ interface MainContentProps {
 const MainContent = ({portfolioContent, blogContent}: MainContentProps) => {
     const t = useTranslations("MainContent");
     return (
-        <main className="flex justify-center ml-10 md:ml-30 md:mt-10 text-site-800 dark:text-site-100">
+        <main id="about" className="flex justify-center ml-10 md:ml-30 md:mt-10 text-site-800 dark:text-site-100">
 
             <div className="flex flex-col justify-center">
                 <ScrollReveal delay={200}>
@@ -56,7 +56,7 @@ const MainContent = ({portfolioContent, blogContent}: MainContentProps) => {
                 </ScrollReveal>
 
                 <ScrollReveal delay={200}>
-                    <section className="mt-10 md:mt-40">
+                    <section id="projects" className="mt-10 md:mt-40">
                         <h1 className="font-poppins font-medium text-[9px] md:text-base xl:text-xl xl:mb-6">Portfolio</h1>
                         <h2 className="font-poppins text-xs max-w-[24ch] mt-2.5 md:text-lg xl:text-3xl xl:mb-14">{t("portfolioSubTitle")}</h2>
 
@@ -67,7 +67,7 @@ const MainContent = ({portfolioContent, blogContent}: MainContentProps) => {
                 </ScrollReveal>
 
                 <ScrollReveal delay={200}>
-                    <section className="mt-10 md:mt-40">
+                    <section id="blog" className="mt-10 md:mt-40">
                         <h1 className="font-poppins font-medium text-[9px] xl:text-xl md:text-base xl:mb-6">Blogspot</h1>
                         <h2 className="font-poppins text-xs max-w-[24ch] mt-2.5 md:text-lg xl:text-3xl xl:mb-14">{t("blogSubTitle")}</h2>
                         {blogContent}

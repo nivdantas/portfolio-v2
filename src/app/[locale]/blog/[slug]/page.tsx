@@ -95,33 +95,41 @@ const BlogPostPage = async ({
     return (
         <>
             <LanguageButton/>
-            <main className="flex justify-center ml-10 md:ml-30 md:mt-10 text-site-800 dark:text-site-100">
+            <main className="flex justify-center md:mt-10 text-site-800 dark:text-site-100">
                 <article className="max-w-3xl w-full">
+                    <div
+                        className="flex justify-center my-0 mx-auto w-fit h-fit min-w-xs min-h-40 xl:min-w-3xl xl:min-h-80 bg-cover bg-center"
+                        style={
+                            post.imageUrl
+                                ? { backgroundImage: `url(${post.imageUrl})` }
+                                : undefined
+                        }
+                    />
                     {locale === "pt" ? (
-                            <>
+                            <div className="ml-5">
                                 <h1 className="font-archivo font-black text-3xl md:text-5xl mt-8">
                                     {post.title_pt}
                                 </h1>
                                 <p className="font-poppins text-site-700 dark:text-site-200 mt-2">
                                     {formatDate(post.createdAt, locale)}
                                 </p>
-                                <div className="font-poppins mt-8 prose dark:prose-invert max-w-none">
+                                <div className="flex flex-col gap-4 font-poppins mt-8 prose dark:prose-invert max-w-none">
                                     <ReactMarkdown>{post.content_pt}</ReactMarkdown>
                                 </div>
-                            </>
+                            </div>
                         ) :
-                        (<><h1 className="font-archivo font-black text-3xl md:text-5xl mt-8">
+                        (<div className="ml-5"><h1 className="font-archivo font-black text-3xl md:text-5xl mt-8">
                             {post.title_en}
                         </h1>
                             <p className="font-poppins text-site-700 dark:text-site-200 mt-2">
                                 {formatDate(post.createdAt, locale)}
                             </p>
                             <div
-                                className="font-poppins mt-8 prose dark:prose-invert max-w-none"
+                                className="flex flex-col gap-4 font-poppins mt-8 prose dark:prose-invert max-w-none"
                             >
                                 <ReactMarkdown>{post.content_en}</ReactMarkdown>
                             </div>
-                        </>)
+                        </div>)
                     }
 
                 </article>

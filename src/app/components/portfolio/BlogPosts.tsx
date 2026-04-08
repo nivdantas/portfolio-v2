@@ -95,7 +95,7 @@ const BlogPosts = () => {
             <article className="grid grid-cols-[1fr_4fr] md:grid-cols-[175px_1fr] mt-7 gap-3 md:gap-8">
                 {secondary.map((post, i) => (
                     <div key={post.id} className={`contents ${i > 0 ? "hidden md:contents" : ""}`}>
-                        <a href={`/blog/${post.slug}`} className="block">
+                        <Link href={`/blog/${post.slug}`} className="block">
                             <div
                                 className="w-[73px] md:w-[175px] h-[53px] md:h-[125px] xl:w-[350px] xl:h-[220px] bg-gray-800 rounded-md overflow-hidden bg-cover bg-center"
                                 style={
@@ -104,7 +104,7 @@ const BlogPosts = () => {
                                         : undefined
                                 }
                             />
-                        </a>
+                        </Link>
                         <div className={`flex flex-col gap-2 justify-center ${i > 0 ? "hidden md:flex" : ""}`}>
                             <h1 className="font-poppins text-[8px] md:text-base">{getLocalizedTitle(post)}</h1>
                             <h2 className="font-poppins text-[8px] md:text-base text-site-700 dark:text-site-200">

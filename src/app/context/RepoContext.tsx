@@ -28,7 +28,6 @@ export const RepoProvider = ({ children }: { children: React.ReactNode }) => {
       setError(null);
       try {
         const res = await fetch("/api/repos");
-		  console.log("Fetch feito");
         if (!res.ok) {
           const errorData = await res.json().catch(() => ({ error: "Failed to parse error response." }));
           throw new Error(

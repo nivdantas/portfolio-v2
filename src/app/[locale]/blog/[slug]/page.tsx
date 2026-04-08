@@ -1,18 +1,28 @@
 import {setRequestLocale} from "next-intl/server";
 import Footer from "@/components/layout/Footer";
 import ReactMarkdown from 'react-markdown';
+import LanguageButton from "@/components/ui/LanguageButton";
 
 interface BlogPost {
     id: number;
-    title: string;
+    title_en: string;
+    title_pt: string;
     slug: string;
-    content: string;
+    content_en: string;
+    content_pt: string;
     imageUrl?: string | null;
     createdAt: string;
 }
 
-const formatDate = (dateStr: string) => {
+const formatDate = (dateStr: string, locale: string) => {
     const date = new Date(dateStr);
+    if (locale === "pt") {
+        return date.toLocaleDateString("pt-BR", {
+            year: "numeric",
+            month: "short",
+            day: "numeric",
+        });
+    }
     return date.toLocaleDateString("en-US", {
         year: "numeric",
         month: "short",
@@ -22,7 +32,6 @@ const formatDate = (dateStr: string) => {
 
 const fetchPost = async (slug: string): Promise<BlogPost | null> => {
     try {
-        // Fetch from your API — adjust the URL to your portfolio-api endpoint
         const res = await fetch(`${process.env.BLOG_API_URL}/posts/${slug}`, {
             next: {revalidate: 60 * 60},
         });
@@ -40,12 +49,13 @@ const BlogPostPage = async ({
 }) => {
     const {locale, slug} = await params;
     setRequestLocale(locale);
-
+    console.log(locale)
     const post = await fetchPost(slug);
 
     if (!post) {
         return (
             <>
+                <LanguageButton/>
                 <main className="flex justify-center mt-20 text-site-800 dark:text-site-100">
                     <h1 className="font-poppins text-2xl">Post not found</h1>
                 </main>
@@ -55,19 +65,36 @@ const BlogPostPage = async ({
 
     return (
         <>
+            <LanguageButton/>
             <main className="flex justify-center ml-10 md:ml-30 md:mt-10 text-site-800 dark:text-site-100">
                 <article className="max-w-3xl w-full">
-                    <h1 className="font-archivo font-black text-3xl md:text-5xl mt-8">
-                        {post.title}
-                    </h1>
-                    <p className="font-poppins text-site-700 dark:text-site-200 mt-2">
-                        Niv — {formatDate(post.createdAt)}
-                    </p>
-                    <div
-                        className="font-poppins mt-8 prose dark:prose-invert max-w-none"
-                    >
-                        <ReactMarkdown>{post.content}</ReactMarkdown>
-                    </div>
+                    {locale === "pt" ? (
+                            <>
+                                <h1 className="font-archivo font-black text-3xl md:text-5xl mt-8">
+                                    {post.title_pt}
+                                </h1>
+                                <p className="font-poppins text-site-700 dark:text-site-200 mt-2">
+                                    {formatDate(post.createdAt, locale)}
+                                </p>
+                                <div className="font-poppins mt-8 prose dark:prose-invert max-w-none">
+                                    <ReactMarkdown>{post.content_pt}</ReactMarkdown>
+                                </div>
+                            </>
+                        ) :
+                        (<><h1 className="font-archivo font-black text-3xl md:text-5xl mt-8">
+                            {post.title_en}
+                        </h1>
+                            <p className="font-poppins text-site-700 dark:text-site-200 mt-2">
+                                {formatDate(post.createdAt, locale)}
+                            </p>
+                            <div
+                                className="font-poppins mt-8 prose dark:prose-invert max-w-none"
+                            >
+                                <ReactMarkdown>{post.content_en}</ReactMarkdown>
+                            </div>
+                        </>)
+                    }
+
                 </article>
             </main>
             <Footer/>

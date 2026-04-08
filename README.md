@@ -16,7 +16,8 @@ This is my advanced portfolio built with industry-standard tools and best practi
 - **TypeScript** - Type-safe development for better code quality and maintainability.
 - **Tailwind CSS** - Utility-first CSS framework for rapid, responsive design.
 - **Next-INTL (I18n)** - Internationalization toolkit.
-
+- **ElysiaJS** - REST API for blogspot.
+  
 ## ✨ Features
 
 - **Server-Side Rendering (SSR)**
@@ -29,27 +30,30 @@ This is my advanced portfolio built with industry-standard tools and best practi
 ## 📂 Project Structure
 
 ```bash
-├── messages/                     # Internationalization message files
-├── public/                       # Static assets served by Next.js
-├── src/
-│   ├── app/
-│   │   ├── [locale]/            # Dynamic route for internationalization
-│   │   ├── api/                 # API routes and server-side endpoints
+├── messages/                    # Internationalization (i18n) translation dictionaries
+│   ├── en.json                  # English translations
+│   └── pt.json                  # Portuguese translations
+├── public/                      # Static assets served at the root URL                 
+├── src/                         # Application source code
+│   ├── app/                     # Next.js App Router directory
+│   │   ├── [locale]/            # Dynamic route segment for localized pages
+│   │   │   ├── blog/            # Blog section routes
+│   │   │   ├── layout.tsx       # Localized root layout
+│   │   │   └── page.tsx         # Localized home page
+│   │   ├── api/                 # Next.js Route Handlers (backend endpoints)
+│   │   │   ├── posts/           # API endpoints for blog data
+│   │   │   └── repos/           # API endpoints for repository data
 │   │   ├── components/          # Reusable React components
-│   │   │   ├── CardExpandable.tsx    # Expandable card component for interactive content
-│   │   │   ├── CardStatic.tsx        # Static card component for displaying information
-│   │   │   ├── Footer.tsx            # Footer component with site links and info
-│   │   │   ├── GitRepos.tsx          # Component for displaying GitHub repositories
-│   │   │   ├── Header.tsx            # Header component with navigation
-│   │   │   ├── LanguageButton.tsx    # Language switcher component for i18n
-│   │   │   ├── MainContent.tsx       # Main content area component
-│   │   │   └── ThemeButton.tsx       # Theme toggle component (light/dark mode)
-│   │   ├── context/             # React context providers for state management
-│   │   ├── i18n/               # Internationalization configuration and utilities
-│   │   ├── favicon.ico         # Website favicon
-│   │   ├── globals.css         # Global CSS styles
-│   │   └── layout.tsx          # Root layout component for the application
-├── next.config.ts              # Next.js configuration file
-├── package.json                # Project dependencies and scripts
-└── tsconfig.json              # TypeScript configuration
+│   │   │   ├── layout/          # Structural components (e.g., Header, Footer)
+│   │   │   ├── portfolio/       # Portfolio-specific feature components
+│   │   │   └── ui/              # Generic UI elements (e.g., buttons, inputs)
+│   │   ├── context/             # React Context providers for global state
+│   │   │   ├── BlogContext.tsx  # State management for blog data
+│   │   │   └── RepoContext.tsx  # State management for repository data
+│   │   ├── favicon.ico          # Website favicon
+│   │   ├── globals.css          # Global stylesheet
+│   │   └── i18n/                # i18n configuration and utilities
+│   │       ├── navigation.ts    # Localized navigation helpers
+│   │       ├── request.ts       # Next-intl request configuration
+│   │       └── routing.ts       # Next-intl routing setup
 ```

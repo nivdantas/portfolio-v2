@@ -4,9 +4,11 @@ import { createContext, useContext, useEffect, useState } from "react";
 
 export interface BlogPost {
     id: number;
-    title: string;
+    title_en: string;
+    title_pt: string;
     slug: string;
-    content: string;
+    content_en: string;
+    content_pt: string;
     imageUrl?: string | null;
     createdAt: string;
 }

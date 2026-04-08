@@ -1,10 +1,19 @@
 
 "use client";
-
+import { type BlogPost } from "@/context/BlogContext";
 import { useBlog } from "@/context/BlogContext";
 import { Link } from "@/i18n/navigation"
-const formatDate = (dateStr: string) => {
+import {useLocale} from "next-intl";
+
+const formatDate = (dateStr: string, locale: string) => {
     const date = new Date(dateStr);
+    if (locale === "pt") {
+        return date.toLocaleDateString("pt-BR", {
+            year: "numeric",
+            month: "short",
+            day: "numeric",
+        });
+    }
     return date.toLocaleDateString("en-US", {
         year: "numeric",
         month: "short",
@@ -14,8 +23,11 @@ const formatDate = (dateStr: string) => {
 
 const BlogPosts = () => {
     const { posts, isLoading, error } = useBlog();
+    const locale = useLocale();
+    const getLocalizedTitle = (post: BlogPost): string => {
+        return locale === "pt" ? post.title_pt : post.title_en;
+    };
 
-    // --- Loading skeleton ---
     if (isLoading) {
         return (
             <>
@@ -41,7 +53,6 @@ const BlogPosts = () => {
         );
     }
 
-    // --- Error state ---
     if (error || !posts || posts.length === 0) {
         return (
             <>
@@ -49,21 +60,18 @@ const BlogPosts = () => {
                     <div className="w-[288px] h-[156px] md:w-[692px] md:h-[375px] bg-gray-800 mt-3 rounded-2xl" />
                     <div className="hidden md:flex flex-col gap-2 justify-center">
                         <h1 className="font-poppins text-[8px] md:text-xl">
-                            {error ? "Error loading posts" : "No posts yet"}
+                            {error ? (locale === "pt" ? "Erro ao carregar posts" : "Error loading posts") : (locale === "pt" ? "Sem posts ainda" : "No posts yet")}
                         </h1>
                     </div>
                 </article>
             </>
         );
     }
-
-    // --- Data loaded ---
     const [featured, ...rest] = posts;
     const secondary = rest.slice(0, 3);
 
     return (
         <>
-            {/* Featured post (large) */}
             <article className="md:grid md:grid-cols-[692px_1fr] xl:grid-cols-[800px_1fr] md:gap-4">
                 <Link href={`/blog/${featured.slug}`} className="block">
                     <div
@@ -76,9 +84,9 @@ const BlogPosts = () => {
                     />
                 </Link>
                 <div className="hidden md:flex flex-col gap-2 justify-center">
-                    <h1 className="font-poppins text-[8px] md:text-xl xl:text-3xl">{featured.title}</h1>
+                    <h1 className="font-poppins text-[8px] md:text-xl xl:text-3xl">{getLocalizedTitle(featured)}</h1>
                     <h2 className="font-poppins text-[8px] md:text-xl xl:text-2xl text-site-700 dark:text-site-200">
-                        Niv - {formatDate(featured.createdAt)}
+                        Niv - {formatDate(featured.createdAt, locale)}
                     </h2>
                 </div>
             </article>
@@ -98,9 +106,9 @@ const BlogPosts = () => {
                             />
                         </a>
                         <div className={`flex flex-col gap-2 justify-center ${i > 0 ? "hidden md:flex" : ""}`}>
-                            <h1 className="font-poppins text-[8px] md:text-base">{post.title}</h1>
+                            <h1 className="font-poppins text-[8px] md:text-base">{getLocalizedTitle(post)}</h1>
                             <h2 className="font-poppins text-[8px] md:text-base text-site-700 dark:text-site-200">
-                                Niv - {formatDate(post.createdAt)}
+                                Niv - {formatDate(post.createdAt, locale)}
                             </h2>
                         </div>
                     </div>
@@ -113,7 +121,7 @@ const BlogPosts = () => {
                         <div key={`empty-${idx}`} className={`contents ${idx > 0 ? "hidden md:contents" : ""}`}>
                             <div className="w-[73px] md:w-[175px] h-[53px] md:h-[125px] bg-gray-800 rounded-md" />
                             <div className={`flex flex-col w-fit gap-2 justify-center ${idx > 0 ? "hidden md:flex" : ""}`}>
-                                <h1 className="font-poppins text-[8px] md:text-base xl:text-xl">Coming soon</h1>
+                                <h1 className="font-poppins text-[8px] md:text-base xl:text-xl">{locale === "pt" ? "Em breve" : "Coming soon"}</h1>
                             </div>
                         </div>
                     );

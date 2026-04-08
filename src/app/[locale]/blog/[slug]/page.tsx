@@ -1,19 +1,10 @@
 import type {Metadata} from "next";
+import {type BlogPost} from "@/context/BlogContext";
 import {setRequestLocale} from "next-intl/server";
 import Footer from "@/components/layout/Footer";
 import ReactMarkdown from 'react-markdown';
 import LanguageButton from "@/components/ui/LanguageButton";
 
-interface BlogPost {
-    id: number;
-    title_en: string;
-    title_pt: string;
-    slug: string;
-    content_en: string;
-    content_pt: string;
-    imageUrl?: string | null;
-    createdAt: string;
-}
 
 const formatDate = (dateStr: string, locale: string) => {
     const date = new Date(dateStr);
@@ -88,7 +79,6 @@ const BlogPostPage = async ({
 }) => {
     const {locale, slug} = await params;
     setRequestLocale(locale);
-    console.log(locale)
     const post = await fetchPost(slug);
 
     if (!post) {

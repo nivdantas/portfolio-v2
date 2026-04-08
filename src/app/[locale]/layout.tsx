@@ -26,8 +26,8 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-    title: "Portfolio",
-    description: "Nivaldo Dantas - Website",
+    title: "NivDantas - Portfolio",
+    description: "Full Stack Developer. View projects, repositories, and technical experience.",
 };
 
 

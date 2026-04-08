@@ -1,3 +1,4 @@
+import type {Metadata} from "next";
 import {setRequestLocale} from "next-intl/server";
 import Footer from "@/components/layout/Footer";
 import ReactMarkdown from 'react-markdown';
@@ -41,6 +42,44 @@ const fetchPost = async (slug: string): Promise<BlogPost | null> => {
         return null;
     }
 };
+
+export async function generateMetadata({
+                                           params,
+                                       }: {
+    params: Promise<{ locale: string; slug: string }>;
+}): Promise<Metadata> {
+    const { locale, slug } = await params;
+    const post = await fetchPost(slug);
+
+    if (!post) {
+        return {
+            title: "Post Not Found",
+            description: "The requested blog post could not be found.",
+        };
+    }
+
+    const title = locale === "pt" ? post.title_pt : post.title_en;
+    const content = locale === "pt" ? post.content_pt : post.content_en;
+
+    const cleanDescription = content.replace(/[#*`_>]/g, "").substring(0, 160) + "...";
+
+    return {
+        title: title,
+        description: cleanDescription,
+        openGraph: {
+            title: title,
+            description: cleanDescription,
+            images: [
+                {
+                    url: post.imageUrl || "/Phos.gif",
+                    width: 800,
+                    height: 600,
+                    alt: title,
+                },
+            ],
+        },
+    };
+}
 
 const BlogPostPage = async ({
                                 params,

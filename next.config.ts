@@ -12,7 +12,7 @@ import createNextIntlPlugin from "next-intl/plugin";
 // proxied zones are matched in beforeFiles (ahead of page resolution) and are
 // excluded from the next-intl matcher in proxy.ts so the i18n middleware
 // doesn't swallow them.
-const UERJ_ZONE = "https://UERJ-ZONE.vercel.app";
+const UERJ_ZONE = "https://ufrj-repo.vercel.app";
 
 const nextConfig: NextConfig = {
   async rewrites() {

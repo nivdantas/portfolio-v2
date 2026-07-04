@@ -3,7 +3,7 @@ import { Link } from "@/i18n/navigation";
 
 // Landing page at "/". It bounces to /portfolio (the meta-refresh covers
 // no-JS clients too) and shows an explicit link as a fallback. Intentionally
-// links ONLY to /portfolio — the /ufrj zone stays unlinked.
+// links ONLY to /portfolio — the /uerj zone stays unlinked.
 const Home = async ({ params }: { params: Promise<{ locale: string }> }) => {
   const { locale } = await params;
   setRequestLocale(locale);

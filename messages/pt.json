@@ -1,32 +1,174 @@
 {
-  "Header": {
-    "devTitle": "Engenheiro de <br></br>Software",
-    "devDesc": "Olá, sou Nivaldo Dantas, um engenheiro de software formado criando soluções escaláveis e diligentes.",
-    "navAbout": "Sobre",
-    "navProjects": "Projetos",
-    "navBlog": "Blog"
+  "Navigation": {
+    "label": "Navegação principal",
+    "skip": "Pular para o conteúdo",
+    "work": "Projetos",
+    "about": "Sobre",
+    "writing": "Notas",
+    "contact": "Vamos conversar"
   },
-  "MainContent": {
-    "experienceTitle": "Experiência",
-    "experienceSubTitle": "Um resumo anual de minha experiência profissional",
-    "experienceMobileTitle": "Estagiário em Engenharia de Software no Tribunal de Contas do Amazonas",
-    "experienceMobileParagraph": "Desenvolvi aplicações de ponta a ponta, participei da avaliação anual da LGPD, automatizei processos e apliquei ferramentas de metodologia ágil para organização setorial.",
-    "experienceMobileParagraph2": "Desenvolvi overlays de stream, API para feedback contínuo de métricas de transmissões para clientes. Criei o chatbot Bolota, automatizando com o modelo Gemini.",
-    "educationTitle": "Educação",
-    "educationSubTitle": "Um pouco sobre minha educação",
-    "educationMobileTitle": "Bacharelado em Engenharia de Software no Instituto Federal do Amazonas",
-    "educationMobileParagraph": "Sou formado em Engenharia de Software pelo IFAM, possuindo sólida base acadêmica, com média major GPA de 9 Disciplinas relevantes: AED, Programação Orientada a Objetos, Arquitetura, WEB, Mobile, Garantia de Qualidade.",
-    "papeTitle": "Engenheiro de Software (Bolsista/Pesquisador PAPE)",
-    "papeParagraph": "Arquitetura e desenvolvimento de aplicações React/React Native e SQL com APIs RESTful e testes de software em projetos de P&D.",
-    "portfolioSubTitle": "Explore meus projetos",
-    "blogSubTitle": "Leia meus afazeres e novas ideias"
+  "UI": {
+    "language": "Idioma",
+    "darkTheme": "Ativar tema escuro",
+    "lightTheme": "Ativar tema claro",
+    "pauseMotion": "Pausar animações",
+    "playMotion": "Retomar animações",
+    "retry": "Tentar novamente",
+    "loading": "Carregando",
+    "soundOff": "Silenciar os sons da interface",
+    "soundOn": "Ativar os sons da interface"
   },
-  "Footer": {
-    "footer": "© 2025 Nivaldo Dantas. Todos os direitos reservados."
+  "Hero": {
+    "role": "ENGENHEIRO DE SOFTWARE",
+    "headline": "Código com cuidado.",
+    "headlineAccent": "Um toque pessoal.",
+    "intro": "Sou o <name>Niv</name>. Desenvolvo a interface, a API e as conexões entre elas.",
+    "explore": "Explorar projetos selecionados",
+    "sayHello": "Diga um oi",
+    "scroll": "Continue explorando",
+    "colophon": "BRASIL / WEB, MOBILE E IA",
+    "turnMark": "Assinar o N de novo",
+    "objectCaption": "Peças diferentes. Um sistema conectado.",
+    "interface": "Interface",
+    "data": "Dados"
   },
-  "Projects": {
-    "search": "Buscar projetos por nome, descrição e mais!",
-    "repoLoading": "Carregando Repositórios...",
-    "repoError": "Erro ao carregar repositórios. Por favor, tente novamente mais tarde."
+  "Work": {
+    "label": "PROJETOS SELECIONADOS",
+    "title": "Ideias que ganham",
+    "titleAccent": "forma.",
+    "intro": "Um pouco do que venho construindo. Problemas diferentes, o mesmo cuidado com os detalhes.",
+    "viewSource": "Explorar o código",
+    "studyLabel": "ESTUDO VISUAL",
+    "details": "AS CONEXÕES",
+    "repositoryLabel": "EXPERIMENTOS E CÓDIGO ABERTO",
+    "repositoryTitle": "Conectando mais pontos.",
+    "allRepos": "Todos os repositórios",
+    "repoUnavailable": "A lista de repositórios está indisponível no momento. Você pode explorar tudo no GitHub.",
+    "search": "Busque por nome, linguagem ou tópico",
+    "noResults": "Nenhum repositório corresponde à busca.",
+    "development": "Em desenvolvimento",
+    "stack": "Tecnologias do projeto"
+  },
+  "About": {
+    "label": "A PESSOA POR TRÁS DO CÓDIGO",
+    "title": "A pessoa.",
+    "titleAccent": "Por trás das conexões.",
+    "body": "Sou Nivaldo Dantas, formado em Engenharia de Software pelo IFAM. Minha trajetória passa por projetos de pesquisa no PAPE/Samsung e pelo desenvolvimento de aplicações e automações no Tribunal de Contas do Amazonas.",
+    "body2": "Hoje, trabalho de forma independente com aplicações web, métricas de transmissão e integrações com IA. Gosto de conectar as peças: a interface que alguém usa, a API por trás dela e os dados que fazem tudo funcionar.",
+    "note": "Engenheiro de software",
+    "skillsLabel": "FERRAMENTAS DO DIA A DIA",
+    "philosophy": "A interface que alguém usa. A API por trás dela. Os dados que fazem tudo funcionar."
+  },
+  "Experience": {
+    "label": "O PERCURSO",
+    "title": "Contextos diferentes.",
+    "titleAccent": "Mais conexões.",
+    "present": "Presente",
+    "independent": "Trabalho independente",
+    "freelanceRole": "Engenheiro de Software",
+    "freelanceBody": "Overlays de métricas para transmissões, APIs para feedback contínuo de clientes e automações com Gemini, incluindo o assistente Bolota.",
+    "court": "Tribunal de Contas do Amazonas",
+    "courtRole": "Estagiário em Engenharia de Software",
+    "courtBody": "Desenvolvi aplicações de ponta a ponta, automatizei processos internos, participei da avaliação anual da LGPD e utilizei ferramentas ágeis para organizar o trabalho do setor.",
+    "research": "PAPE / Samsung",
+    "researchRole": "Engenheiro de Software · Pesquisa",
+    "researchBody": "Arquitetura e desenvolvimento de aplicações React, React Native e SQL para projetos de P&D, com APIs RESTful e testes de software.",
+    "bellusStart": "Nov 2026",
+    "bellusRole": "Engenheiro de Software",
+    "bellusBody": "Interfaces em Svelte e automação de fluxos com n8n.",
+    "worktablesStart": "Mai 2026",
+    "worktablesRole": "Engenheiro de Software",
+    "worktablesBody": "Aplicações em Svelte e automações em n8n que conectam as ferramentas, APIs e dados de uma equipe."
+  },
+  "Education": {
+    "label": "Formação",
+    "institution": "Instituto Federal do Amazonas",
+    "degree": "Bacharelado em Engenharia de Software",
+    "description": "A base por trás dos projetos: algoritmos, orientação a objetos, arquitetura, desenvolvimento web e mobile e garantia de qualidade.",
+    "gpa": "Média nas disciplinas principais",
+    "subjects": "Algoritmos · Arquitetura · Web e Mobile · Qualidade de Software"
+  },
+  "Writing": {
+    "label": "NOTAS E IDEIAS",
+    "title": "Notas sobre",
+    "titleAccent": "o processo.",
+    "intro": "O que estou aprendendo, os problemas que estou explorando e as ideias que valem compartilhar.",
+    "all": "Todas as notas",
+    "read": "Ler artigo",
+    "minute": "min de leitura",
+    "emptyTitle": "Espaço para o que vem por aí.",
+    "emptyBody": "Notas sobre software, experimentos e o que aprendo pelo caminho. Novos artigos vão aparecer aqui.",
+    "errorTitle": "As notas estão fora de alcance por um momento.",
+    "errorBody": "Tente novamente daqui a pouco.",
+    "back": "Voltar às notas",
+    "by": "Por Nivaldo Dantas",
+    "notFound": "Esta página tomou outro caminho.",
+    "notFoundBody": "A página que você procura pode ter mudado de lugar. Ainda há muito para explorar.",
+    "return": "Voltar ao portfólio",
+    "share": "Compartilhar no LinkedIn",
+    "articleError": "Este artigo está temporariamente indisponível."
+  },
+  "Contact": {
+    "label": "MAIS UMA CONEXÃO",
+    "title": "Vamos conectar",
+    "titleAccent": "a próxima ideia.",
+    "email": "Enviar um email para o Niv",
+    "copy": "Copiar email",
+    "copied": "Email copiado!",
+    "copyFailed": "Não foi possível copiar. Selecione o endereço ou abra o link de email.",
+    "crafted": "Interfaces, APIs e as conexões entre elas.",
+    "backTop": "Voltar ao topo"
+  },
+  "Gallery": {
+    "label": "Introdução e projetos selecionados",
+    "navigation": "Introdução e projetos selecionados",
+    "intro": "Niv",
+    "skip": "Conheça a pessoa"
+  },
+  "Capabilities": {
+    "label": "COMO AS PEÇAS SE ENCAIXAM",
+    "title": "Da interface.",
+    "titleAccent": "Ao sistema.",
+    "intro": "As ferramentas fazem sentido no contexto. É assim que elas aparecem nos meus projetos.",
+    "interface": "Interfaces",
+    "interfaceBody": "Aplicações web e mobile em React e Svelte, de projetos de pesquisa a interações do dia a dia.",
+    "systems": "Sistemas",
+    "systemsBody": "APIs, dados e estruturas de comércio que conectam uma interface às informações úteis.",
+    "intelligence": "Integrações com IA",
+    "intelligenceBody": "Conectando conversas em linguagem natural a dados e ferramentas, como no Bolota.",
+    "data": "Dados",
+    "automation": "Automação",
+    "automationBody": "Fluxos em n8n que conectam serviços, APIs e dados, para que o trabalho repetitivo rode sozinho."
+  },
+  "ProjectArt": {
+    "input": "Entrada",
+    "question": "Uma pergunta de um cliente.",
+    "context": "Contexto",
+    "inventory": "Estoque e preços",
+    "conversation": "Conversa",
+    "data": "Dados",
+    "dataConnected": "Informações conectadas",
+    "catalog": "Catálogo",
+    "structure": "Um estudo de comércio",
+    "interface": "Interface",
+    "formFunction": "FORMA / FUNÇÃO / FLUXO",
+    "oneDay": "Um dia de cada vez",
+    "illustrativeWeek": "Uma semana ilustrativa",
+    "smallSteps": "UM PASSO POR DIA"
+  },
+  "Ruler": {
+    "label": "Seções da página",
+    "intro": "Início",
+    "about": "Sobre",
+    "experience": "Experiência",
+    "repositories": "Código aberto",
+    "writing": "Escrita",
+    "contact": "Contato"
+  },
+  "Snake": {
+    "title": "Jogo da cobrinha",
+    "board": "Tabuleiro do jogo da cobrinha",
+    "over": "Fim de jogo",
+    "close": "Fechar o jogo"
   }
 }

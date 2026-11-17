@@ -1,48 +1,44 @@
 "use client";
-import {usePathname, useRouter} from "@/i18n/navigation";
-import {useLocale} from "next-intl";
+import { usePathname, useRouter } from "@/i18n/navigation";
+import { useLocale, useTranslations } from "next-intl";
+import { useTransition } from "react";
 
-const LanguageButton = () => {
-    const locale = useLocale();
-    const router = useRouter();
-    const pathname = usePathname();
-    const switchLocale = (newLocale: string) => {
-        if (newLocale !== locale) {
-            router.replace(pathname, {locale: newLocale, scroll: false});
-            router.refresh()
-        }
-    };
-
-    return (
-        <div className={`absolute border rounded-3xl xl:w-18 xl:h-9 w-14 h-7 mt-1 flex items-center justify-center md:top-6 md:right-18 top-2.5 right-2.5`}>
-            <button
-                id="button-en"
-                aria-label="Change language to English"
-                onClick={() => switchLocale("en")}
-                className={`text-xs xl:text-base font-poppins font-light text-site-800 dark:text-site-100 hover-underline ${
-                    locale === "en" ? "opacity-100" : "opacity-50"
-                }`}
-            >
-                EN
-            </button>
-
-            <span className="self-center text-neutral-500 text-xs lg:text-sm xl:text-lg text-center mx-1">
-         |
-      </span>
-
-            <button
-                id="button-PT"
-                aria-label="Change language to Portuguese"
-                onClick={() => switchLocale("pt")}
-                className={`text-xs xl:text-base font-poppins font-light text-site-800 dark:text-site-100 hover-underline  ${
-                    locale === "pt" ? "opacity-100" : "opacity-50"
-                }`}
-            >
-                PT
-            </button>
-
-        </div>
-    );
-};
-
-export default LanguageButton;
+export default function LanguageButton() {
+  const locale = useLocale();
+  const t = useTranslations("UI");
+  const router = useRouter();
+  const pathname = usePathname();
+  const [pending, startTransition] = useTransition();
+  return (
+    <div
+      className="language-control"
+      role="group"
+      aria-label={t("language")}
+      aria-busy={pending}
+    >
+      {(["pt", "en"] as const).map((value) => (
+        <button
+          key={value}
+          type="button"
+          data-sound="toggle"
+          aria-pressed={locale === value}
+          disabled={pending}
+          onClick={() => {
+            if (value !== locale)
+              startTransition(() => {
+                router.replace(
+                  `${pathname}${window.location.search}${window.location.hash}`,
+                  { locale: value, scroll: false },
+                );
+                // Unprefixed locale URLs are identical, so the route cache must
+                // be refreshed after next-intl updates the locale cookie.
+                router.refresh();
+              });
+          }}
+        >
+          {value.toUpperCase()}
+        </button>
+      ))}
+    </div>
+  );
+}

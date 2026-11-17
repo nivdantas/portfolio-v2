@@ -1,32 +1,174 @@
 {
-  "Header": {
-    "devTitle": "Software <br></br> Engineer",
-    "devDesc": "Hello, I'm Nivaldo Dantas, a software engineer formally trained to create scalable and diligent solutions.",
-    "navAbout": "About",
-    "navProjects": "Projects",
-    "navBlog": "Blog"
+  "Navigation": {
+    "label": "Main navigation",
+    "skip": "Skip to content",
+    "work": "Work",
+    "about": "About",
+    "writing": "Writing",
+    "contact": "Let's talk"
   },
-  "MainContent": {
-    "experienceTitle": "Experience",
-    "experienceSubTitle": "An annual summary of my professional experience",
-    "experienceMobileTitle": "Internship in Software Engineering at Amazonas State Court of Accounts",
-    "experienceMobileParagraph": "Developed end-to-end applications, participated in the annual LGPD assessment, automated processes, and applied agile methodologies for sectoral organization.",
-    "experienceMobileParagraph2": "Developed overlays for stream metrics, API for continuous feedback to clients. Created Bolota chatbot, automating with Gemini model.",
-    "educationTitle": "Education",
-    "educationSubTitle": "A little about my education",
-    "educationMobileTitle": "Bachelor in Software Engineering at Federal Institute of Amazonas",
-    "educationMobileParagraph": "Bachelor in Software Engineering at Federal Institute of Amazonas, with a solid academic foundation, major GPA of 9 relevant disciplines: AED, Object-Oriented Programming, Architecture, WEB, Mobile, Quality Assurance.",
-    "papeTitle": "Software Research Engineer (PAPE/Samsung)",
-    "papeParagraph": "Architected and developed React/React Native and SQL applications for R&D projects using RESTful APIs and testing.",
-    "portfolioSubTitle": "Explore my projects",
-    "blogSubTitle": "Read my tasks and new ideas"
+  "UI": {
+    "language": "Language",
+    "darkTheme": "Switch to dark theme",
+    "lightTheme": "Switch to light theme",
+    "pauseMotion": "Pause animations",
+    "playMotion": "Resume animations",
+    "retry": "Try again",
+    "loading": "Loading",
+    "soundOff": "Mute interface sounds",
+    "soundOn": "Turn on interface sounds"
   },
-  "Footer": {
-    "footer": "© 2025 Nivaldo Dantas. All rights reserved."
+  "Hero": {
+    "role": "SOFTWARE ENGINEER",
+    "headline": "Thoughtful code.",
+    "headlineAccent": "A personal touch.",
+    "intro": "I'm <name>Niv</name>. I build the interface, the API, and the connections between them.",
+    "explore": "Explore selected work",
+    "sayHello": "Say hello",
+    "scroll": "Scroll to explore",
+    "colophon": "BRAZIL / WEB, MOBILE & AI",
+    "turnMark": "Sign the N again",
+    "objectCaption": "Different pieces. One connected system.",
+    "interface": "Interface",
+    "data": "Data"
   },
-  "Projects": {
-    "search": "Search Projects by name, description and more!",
-    "repoLoading": "Loading Repositories...",
-    "repoError": "Error loading repositories. Please try again later."
+  "Work": {
+    "label": "SELECTED WORK",
+    "title": "Ideas, made",
+    "titleAccent": "tangible.",
+    "intro": "A few things I've been building. Different problems, the same attention to detail.",
+    "viewSource": "Explore the source",
+    "studyLabel": "VISUAL STUDY",
+    "details": "THE CONNECTIONS",
+    "repositoryLabel": "EXPERIMENTS & OPEN SOURCE",
+    "repositoryTitle": "Still connecting the dots.",
+    "allRepos": "All repositories",
+    "repoUnavailable": "The live repository list is taking a break. You can explore everything on GitHub.",
+    "search": "Search name, language, or topic",
+    "noResults": "No repositories match your search.",
+    "development": "In development",
+    "stack": "Project technologies"
+  },
+  "About": {
+    "label": "THE PERSON BEHIND THE CODE",
+    "title": "The person.",
+    "titleAccent": "Behind the connections.",
+    "body": "I'm Nivaldo Dantas, a software engineering graduate from IFAM. My work has taken me from research projects with PAPE/Samsung to applications and process automation at the Amazonas State Court of Accounts.",
+    "body2": "These days, I work independently on web applications, stream metrics, and AI integrations. I like connecting the pieces: the interface someone uses, the API behind it, and the data that makes it useful.",
+    "note": "Software engineer",
+    "skillsLabel": "TOOLS I WORK WITH",
+    "philosophy": "The interface someone uses. The API behind it. The data that makes it useful."
+  },
+  "Experience": {
+    "label": "THE JOURNEY",
+    "title": "Different contexts.",
+    "titleAccent": "More connections.",
+    "present": "Present",
+    "independent": "Independent work",
+    "freelanceRole": "Software Engineer",
+    "freelanceBody": "Stream metric overlays, APIs for continuous client feedback, and Gemini-powered automation, including the Bolota assistant.",
+    "court": "Amazonas State Court of Accounts",
+    "courtRole": "Software Engineering Intern",
+    "courtBody": "Built end-to-end applications, automated internal processes, contributed to the annual LGPD assessment, and used agile tools to organize the team's work.",
+    "research": "PAPE / Samsung",
+    "researchRole": "Software Research Engineer",
+    "researchBody": "Designed and developed React, React Native, and SQL applications for R&D projects, working with REST APIs and software testing.",
+    "bellusStart": "Nov 2026",
+    "bellusRole": "Software Engineer",
+    "bellusBody": "Svelte interfaces and n8n workflow automation.",
+    "worktablesStart": "May 2026",
+    "worktablesRole": "Software Engineer",
+    "worktablesBody": "Svelte applications and n8n automations that connect a team's tools, APIs, and data."
+  },
+  "Education": {
+    "label": "Education",
+    "institution": "Federal Institute of Amazonas",
+    "degree": "Bachelor's in Software Engineering",
+    "description": "The foundations behind the work: algorithms, object-oriented programming, architecture, web and mobile development, and quality assurance.",
+    "gpa": "Major GPA",
+    "subjects": "Algorithms · Architecture · Web & Mobile · Quality Assurance"
+  },
+  "Writing": {
+    "label": "NOTES & IDEAS",
+    "title": "Notes from",
+    "titleAccent": "the process.",
+    "intro": "Things I'm learning, problems I'm working through, and ideas worth sharing.",
+    "all": "All writing",
+    "read": "Read article",
+    "minute": "min read",
+    "emptyTitle": "A space for what comes next.",
+    "emptyBody": "Notes on software, experiments, and the things learned along the way. New articles will appear here.",
+    "errorTitle": "The notes are temporarily out of reach.",
+    "errorBody": "Please try again in a moment.",
+    "back": "Back to writing",
+    "by": "By Nivaldo Dantas",
+    "notFound": "This page wandered off.",
+    "notFoundBody": "The page you're looking for may have moved. There's plenty more to explore.",
+    "return": "Back to the portfolio",
+    "share": "Share on LinkedIn",
+    "articleError": "This article is temporarily unavailable."
+  },
+  "Contact": {
+    "label": "ONE MORE CONNECTION",
+    "title": "Let's connect",
+    "titleAccent": "the next idea.",
+    "email": "Send Niv an email",
+    "copy": "Copy email",
+    "copied": "Email copied!",
+    "copyFailed": "Couldn't copy. You can select the email address or open the email link.",
+    "crafted": "Interfaces, APIs, and everything in between.",
+    "backTop": "Back to top"
+  },
+  "Gallery": {
+    "label": "Introduction and selected work",
+    "navigation": "Introduction and selected projects",
+    "intro": "Niv",
+    "skip": "Meet the person"
+  },
+  "Capabilities": {
+    "label": "HOW THE PIECES FIT",
+    "title": "From the screen.",
+    "titleAccent": "To the system.",
+    "intro": "Tools make sense in context. Here is how I use them across the work.",
+    "interface": "Interfaces",
+    "interfaceBody": "Web and mobile applications in React and Svelte, from research projects to everyday interactions.",
+    "systems": "Systems",
+    "systemsBody": "The APIs, data, and commerce structures that connect an interface to useful information.",
+    "intelligence": "AI integrations",
+    "intelligenceBody": "Connecting natural-language conversations to data and tools, as explored in Bolota.",
+    "data": "Data",
+    "automation": "Automation",
+    "automationBody": "n8n workflows that connect services, APIs, and data, so repeated work runs by itself."
+  },
+  "ProjectArt": {
+    "input": "Input",
+    "question": "A question from a customer.",
+    "context": "Context",
+    "inventory": "Inventory & prices",
+    "conversation": "Conversation",
+    "data": "Data",
+    "dataConnected": "Information, connected",
+    "catalog": "Catalog",
+    "structure": "A commerce study",
+    "interface": "Interface",
+    "formFunction": "FORM / FUNCTION / FLOW",
+    "oneDay": "One day at a time",
+    "illustrativeWeek": "An illustrative week",
+    "smallSteps": "SMALL STEPS, DAILY"
+  },
+  "Ruler": {
+    "label": "Page sections",
+    "intro": "Intro",
+    "about": "About",
+    "experience": "Experience",
+    "repositories": "Open source",
+    "writing": "Writing",
+    "contact": "Contact"
+  },
+  "Snake": {
+    "title": "Snake",
+    "board": "Snake game board",
+    "over": "Game over",
+    "close": "Close the game"
   }
 }

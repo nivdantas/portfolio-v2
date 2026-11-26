@@ -45,6 +45,7 @@
     "allRepos": "Todos os repositórios",
     "repoUnavailable": "A lista de repositórios está indisponível no momento. Você pode explorar tudo no GitHub.",
     "search": "Busque por nome, linguagem ou tópico",
+    "resultCount": "{count, plural, one {# repositório encontrado} other {# repositórios encontrados}}",
     "noResults": "Nenhum repositório corresponde à busca.",
     "development": "Em desenvolvimento",
     "stack": "Tecnologias do projeto"

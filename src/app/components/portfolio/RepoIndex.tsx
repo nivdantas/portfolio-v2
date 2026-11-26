@@ -11,10 +11,11 @@ export default function RepoIndex({
 }) {
   const [query, setQuery] = useState("");
   const t = useTranslations("Work");
+  const normalizedQuery = query.trim().toLowerCase();
   const filtered = repositories.filter((repo) =>
     `${repo.name} ${repo.description ?? ""} ${repo.language ?? ""} ${repo.topics.join(" ")}`
       .toLowerCase()
-      .includes(query.toLowerCase()),
+      .includes(normalizedQuery),
   );
   return (
     <div className="repo-index">
@@ -31,6 +32,11 @@ export default function RepoIndex({
           {filtered.length.toString().padStart(2, "0")}
         </span>
       </label>
+      <span className="sr-only" role="status">
+        {filtered.length
+          ? t("resultCount", { count: filtered.length })
+          : t("noResults")}
+      </span>
       <div className="repo-rows">
         {filtered.map((repo) => (
           <a
@@ -47,7 +53,7 @@ export default function RepoIndex({
         ))}
       </div>
       {!filtered.length && (
-        <p role="status" className="empty-search">
+        <p className="empty-search">
           {t("noResults")}
         </p>
       )}

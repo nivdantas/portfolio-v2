@@ -2,7 +2,7 @@
 
 A personal, bilingual portfolio for Nivaldo Dantas, built with Next.js 16, React 19, TypeScript, next-intl, and Tailwind CSS 4.
 
-The design centers on forest green (`#1E3B2F`), cream typography, sage accents, and original project scenes. On larger screens, native scrolling reveals the introduction and projects as a layered vertical sequence; mobile, reduced-motion, paused, and no-JavaScript layouts use a single vertical document. It includes selected projects, a searchable public GitHub index, a personal introduction, experience, education, writing, an article reader, and contact. Light/dark themes, Portuguese/English, keyboard controls, reduced motion, and a persistent animation pause are supported.
+The portfolio uses an ink-and-paper palette with light and dark themes, original project illustrations, and optional interface sounds. On larger screens, native scrolling reveals the introduction and projects in layers. Mobile, reduced-motion, paused, and no-JavaScript layouts use a single vertical document. The site includes selected projects, a searchable public GitHub index, experience, education, writing, and contact.
 
 ## Development
 
@@ -10,13 +10,12 @@ Use Node.js 22.18+ and Bun. Install from the checked-in lockfile:
 
 ```sh
 bun install --frozen-lockfile
-cp .env.example .env.local
 bun run dev
 ```
 
 Open `/portfolio`. `/` redirects there; `/blog` lists writing. Existing `/uerj` and `/tako` proxy routes remain configured in `next.config.ts`.
 
-`BLOG_API_URL` connects the external bilingual blog service. Without it, the writing section shows an intentional empty state. Public GitHub repositories can load without a token; `MY_TOKEN` is optional for authenticated limits. Featured project content remains available independently of GitHub.
+If you want to connect the blog service or configure automated publishing, copy `.env.example` to `.env.local` and set the values you need. `BLOG_API_URL` connects the external bilingual blog service. Without it, the writing section shows an intentional empty state. Public GitHub repositories can load without a token; `MY_TOKEN` is optional for authenticated limits. Featured project content remains available independently of GitHub.
 
 ```sh
 bun run typecheck

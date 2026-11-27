@@ -45,6 +45,7 @@
     "allRepos": "All repositories",
     "repoUnavailable": "The live repository list is taking a break. You can explore everything on GitHub.",
     "search": "Search name, language, or topic",
+    "resultCount": "{count, plural, one {# repository found} other {# repositories found}}",
     "noResults": "No repositories match your search.",
     "development": "In development",
     "stack": "Project technologies"

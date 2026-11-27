@@ -137,9 +137,14 @@ try {
       assert.ok(!html.includes("MISSING_MESSAGE"));
     },
   );
-  await check("Writing index resolves", async () => {
-    const r = await fetch(base + "/blog");
+  await check("Writing index resolves with its own canonical and social URL", async () => {
+    const r = await fetch(base + "/blog", {
+      headers: { Cookie: "NEXT_LOCALE=en" },
+    });
     assert.equal(r.status, 200);
+    const html = await r.text();
+    assert.match(html, /<link rel="canonical" href="https:\/\/nivdantas\.com\/blog"/);
+    assert.match(html, /<meta property="og:url" content="https:\/\/nivdantas\.com\/blog"/);
   });
   await check(
     "Posts API validates actual bilingual data and excludes drafts",
